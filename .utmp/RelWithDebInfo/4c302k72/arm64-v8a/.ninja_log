@@ -1,0 +1,19 @@
+# ninja log v5
+78	1527	7866307599803406	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	77730d8e01775a27
+27	1524	7866307599813432	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8e81becc90292cc6
+107	1647	7866307601053147	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b087287d8ddc66b4
+15	1529	7866307599868554	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8769126d2fed8120
+93	1541	7866307599984038	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ef162c1f069e0df6
+49	1560	7866307600215241	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3f5e3c8bb31b6ab1
+63	1774	7866307602345847	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	669615e269796397
+1866	1993	7866307604519612	C:/Users/samue/Documents/Projets Unity/Epitech/T-VIR ProBuilder Demo Project/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4c302k72/obj/arm64-v8a/libgame.so	4f3d6ff46f860f51
+37	1866	7866307603226878	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9c167e886e68e86f
+13	3164	7866603432844474	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8e81becc90292cc6
+209	3172	7866603432813311	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	77730d8e01775a27
+99	3190	7866603433147245	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8769126d2fed8120
+159	3207	7866603433277091	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ef162c1f069e0df6
+130	3311	7866603434327068	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3f5e3c8bb31b6ab1
+234	3469	7866603435961502	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b087287d8ddc66b4
+184	3629	7866603437543197	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	669615e269796397
+63	3815	7866603439312143	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9c167e886e68e86f
+3815	4097	7866603442161229	C:/Users/samue/Documents/Projets Unity/Epitech/T-VIR ProBuilder Demo Project/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4c302k72/obj/arm64-v8a/libgame.so	4f3d6ff46f860f51

@@ -1,0 +1,10 @@
+# ninja log v5
+115	3206	7949627380278079	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	718238b5f324b356
+62	3230	7949627380372948	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	4ce2bf10d025de86
+40	3235	7949627380509418	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	43046427b4a23cbd
+172	3242	7949627380684954	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	62a2d798692b4a20
+1	3317	7949627381396825	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ea581c7c45bf382d
+144	3462	7949627382847022	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	101b45a3034ebc05
+87	3710	7949627385378088	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	8170c86c762a1146
+21	3902	7949627387249100	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	382c9f3d9344babe
+3903	4109	7949627389342309	C:/Users/samue/Documents/Projets Unity/Laval Virtual/Cooking Sabbat Laval Virtual/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5t3g6h47/obj/arm64-v8a/libgame.so	abbaa3f1bbdf340b

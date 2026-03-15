@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb73555c1f09041b67e613296df52e, type: 3}
+  m_Name: Recipe White Potion
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Philtre d'amour pour Bruce Wayne
+  description: 
+  icon: {fileID: -2578651400172810937, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  requiredIngredients:
+  - {fileID: 11400000, guid: cdc602dc3dc320444a5ba5239b004cec, type: 2}
+  - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
+  - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
+  potionColor: {r: 1, g: 1, b: 1, a: 0.49019608}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
