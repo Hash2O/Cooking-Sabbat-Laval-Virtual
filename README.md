@@ -1,2 +1,2 @@
 # Demo-T-VIR-900-Project
-Repo temporaire pour projet T-VIR Epitech "HalloWitch" 
+Repo nouveau départ pour le projet Cooking Sabbat (pour présentation au Laval Virtual)
