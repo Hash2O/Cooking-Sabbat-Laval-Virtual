@@ -27894,11 +27894,11 @@ PrefabInstance:
     - target: {fileID: 3329767574212184020, guid: d4ddedfdb1e30844e95bdea0cb6c8ff4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ddd07b0b1083354b8242694d297a30d, type: 2}
+      objectReference: {fileID: 2100000, guid: ee72937214a5b06429ee168a8da66892, type: 2}
     - target: {fileID: 3329767574212184020, guid: d4ddedfdb1e30844e95bdea0cb6c8ff4, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: da8b30bf40997b441bb811816f0952a6, type: 2}
+      objectReference: {fileID: 2100000, guid: 7935fe54a280c52428dc4371e1d8bf5c, type: 2}
     - target: {fileID: 3345560878719649174, guid: d4ddedfdb1e30844e95bdea0cb6c8ff4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.000000057375924
@@ -28065,7 +28065,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 30814a878d0c21a4caf4d20fd2ac9629, type: 2}
   - {fileID: 2100000, guid: e6f2acaa77dc56140aa76dcae07369e5, type: 2}
   - {fileID: 2100000, guid: 0272c2f2fd88ac048bee82001a589b6b, type: 2}
-  emptyPageMaterial: {fileID: 2100000, guid: cc73723eb2581ab4aabd19c4f60079ba, type: 2}
+  emptyPageMaterial: {fileID: 2100000, guid: 0272c2f2fd88ac048bee82001a589b6b, type: 2}
   dragDistance: 0.8
   currentProgress: 0
   pageDirection: {x: -1, y: 0, z: 0}

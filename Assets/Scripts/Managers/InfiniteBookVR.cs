@@ -38,13 +38,22 @@ public class InfiniteBook : MonoBehaviour
     public Vector3 pageDirection = new Vector3(-1, 0, 0); 
 
     [Header("Livre Infini")]
-    public int totalPages = 4; 
+    public int totalPages = 12; 
     public int currentPageIndex = 0; 
 
     private void Start()
     {
         activeStateName = animRightToLeft;
         UpdateBookContent(currentPageIndex);
+
+        // Ajout gestion dynamique des recettes
+        RecipeManager.RecipeInstance.OnRecipeDiscovered += OnRecipeDiscovered;
+        BuildPagesFromRecipes(RecipeManager.RecipeInstance.GetKnownRecipes());
+    }
+
+    void OnRecipeDiscovered(RecipeData recipe)
+    {
+        BuildPagesFromRecipes(RecipeManager.RecipeInstance.GetKnownRecipes());
     }
 
     // On passe l'index en paramètre pour gérer la "Prévisualisation"
@@ -208,6 +217,7 @@ public class InfiniteBook : MonoBehaviour
             pageChanged = true;
         }
 
+
         // --- LE RESET FINAL ---
         
         // Qu'on ait changé de page ou qu'on ait annulé le mouvement,
@@ -219,5 +229,23 @@ public class InfiniteBook : MonoBehaviour
         // C'est ce qui crée l'illusion d'infini.
         currentProgress = 0f;
         ApplyAnimation(currentProgress);
+    }
+
+    // --- Adapter InfiniteBook pour recevoir des pages dynamiques ---
+
+    public void BuildPagesFromRecipes(List<RecipeData> recipes)
+    {
+        pageMaterials.Clear();
+
+        foreach (var recipe in recipes)
+        {
+            if (recipe.pageMaterial != null)
+                pageMaterials.Add(recipe.pageMaterial);
+        }
+
+        // Pourquoi /2 ? Parce que le sytème gère page gauche | page droite
+        totalPages = Mathf.CeilToInt(pageMaterials.Count / 2f);
+
+        UpdateBookContent(currentPageIndex);
     }
 }

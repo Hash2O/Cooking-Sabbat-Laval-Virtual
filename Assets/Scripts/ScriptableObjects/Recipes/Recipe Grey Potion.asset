@@ -17,9 +17,10 @@ MonoBehaviour:
   icon: {fileID: -2578651400172810937, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
   potionColor: {r: 0.2776279, g: 0.2776279, b: 0.2776279, a: 0.49019608}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 2100000, guid: ec2f189ba6bb11e4db8ce796d020f36e, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
   - {fileID: 11400000, guid: 22faea027a132a14f89302df48098bf5, type: 2}
   - {fileID: 11400000, guid: a9440f8fadc973e429e8383784a8f13b, type: 2}
   ghostPrefab: {fileID: 2315974465149695507, guid: 9971b731fe64e0144a1288057a9a32e3, type: 3}
-  isKnownAtStart: 0
+  isKnownAtStart: 1

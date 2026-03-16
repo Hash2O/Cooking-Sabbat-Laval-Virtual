@@ -62,6 +62,9 @@ public class RecipeData : ScriptableObject
     // Bouteille qui contiendra la potion finale
     public GameObject bottlePrefab;
 
+    [Header("Grimoire")]
+    public Material pageMaterial;
+
     [Header("Ingrédients")]
     public IngredientData[] requiredIngredients;    // entre 3 et 5
 
