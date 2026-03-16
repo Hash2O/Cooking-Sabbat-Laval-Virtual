@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 720
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 53
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -96,8 +96,8 @@ MonoBehaviour:
     y: 0
     width: 310
     height: 664
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 55
+  controlID: 52
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -300,8 +300,8 @@ MonoBehaviour:
     y: 0
     width: 884.5
     height: 430.5
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -327,8 +327,8 @@ MonoBehaviour:
     y: 0
     width: 245.5
     height: 393.5
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -3649,7 +3649,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_SequenceHierarchy: {fileID: 0}
   m_SequencePath:
-    m_SelectionRoot: 0
+    m_SelectionRoot:
+      m_Data:
+        m_Data: 0
     m_SubElements: []
 --- !u!114 &16
 MonoBehaviour:
@@ -4238,7 +4240,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: -180
+    m_CachedPref: -220
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -4287,7 +4289,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: coin
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -4295,21 +4297,20 @@ MonoBehaviour:
     m_SceneHandles: []
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 0
+    m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/ScriptableObjects/Recipes
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
-    m_OriginalText: 
+    m_OriginalText: coin
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\samue\Documents\Projets Unity\Laval Virtual\Cooking
-    Sabbat Laval Virtual
+  m_LastProjectPath: C:\Users\samue\Documents\Projets Unity\Laval Virtual\Demo-T-VIR-900-Project-story-scene
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 0
@@ -4320,25 +4321,8 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 63362
-    - m_Data: 63364
-    - m_Data: 63366
-    - m_Data: 63368
-    - m_Data: 63370
-    - m_Data: 63372
-    - m_Data: 63374
-    - m_Data: 63376
-    - m_Data: 63378
-    - m_Data: 63380
-    - m_Data: 63382
-    - m_Data: 63384
-    - m_Data: 63386
-    - m_Data: 63388
-    - m_Data: 63390
-    - m_Data: 63392
-    - m_Data: 63394
-    - m_Data: 63396
-    - m_Data: 63398
+    - m_Data: 110822
+    - m_Data: 110824
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4365,31 +4349,20 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 8.340981}
+    scrollPos: {x: 0, y: 428.34097}
     m_SelectedIDs:
-    - m_Data: -157654
+    - m_Data: -112662
     m_LastClickedID:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 63362
-    - m_Data: 63364
-    - m_Data: 63366
-    - m_Data: 63368
-    - m_Data: 63370
-    - m_Data: 63372
-    - m_Data: 63374
-    - m_Data: 63376
-    - m_Data: 63378
-    - m_Data: 63380
-    - m_Data: 63382
-    - m_Data: 63384
-    - m_Data: 63386
-    - m_Data: 63392
+    - m_Data: 110822
+    - m_Data: 110824
+    - m_Data: 111706
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: KitchenStoryScene
+      m_OriginalName: KitchenStoryScene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -4397,10 +4370,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 0
+        m_Data: 110798
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 2}
@@ -4413,8 +4386,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -157654
-    m_LastClickedInstanceID: -157654
+    - m_Data: -112662
+    m_LastClickedInstanceID: -112662
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -4442,7 +4415,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 138.5}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 115
@@ -5186,9 +5159,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -1.5299373, y: 1.5165344, z: -0.008122951}
+    m_Target: {x: -1.9948306, y: 0.6840197, z: 1.0283829}
     speed: 2
-    m_Value: {x: -1.5299373, y: 1.5165344, z: -0.008122951}
+    m_Value: {x: -1.9948306, y: 0.6840197, z: 1.0283829}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -5234,9 +5207,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.11389396, y: -0.6361833, z: 0.09687918, w: 0.75758034}
+    m_Target: {x: -0.2849672, y: 0.61052364, z: -0.2519725, w: -0.6954016}
     speed: 2
-    m_Value: {x: 0.11326877, y: -0.63593334, z: 0.09635257, w: 0.7572814}
+    m_Value: {x: -0.28373486, y: 0.6119645, z: -0.25202498, w: -0.6938856}
   m_Size:
     m_Target: 0.8660254
     speed: 2
@@ -5316,21 +5289,24 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: -157654
+      - m_Data: -112662
       m_LastClickedID:
-        m_Data: -157654
+        m_Data: -112662
       m_ExpandedIDs:
-      - m_Data: -144644
-      - m_Data: -139382
-      - m_Data: -139362
-      - m_Data: -13622
-      - m_Data: -5952
-      - m_Data: -1300
+      - m_Data: -105134
+      - m_Data: -91216
+      - m_Data: -79250
+      - m_Data: -70652
+      - m_Data: -64734
+      - m_Data: -50596
+      - m_Data: -28380
       - m_Data: -12
-      - m_Data: 52170
-      - m_Data: 52322
-      - m_Data: 53354
-      - m_Data: 54894
+      - m_Data: 108048
+      - m_Data: 108464
+      - m_Data: 110584
+      - m_Data: 133082
+      - m_Data: 133374
+      - m_Data: 178846
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

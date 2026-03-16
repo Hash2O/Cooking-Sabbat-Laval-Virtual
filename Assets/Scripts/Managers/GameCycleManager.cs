@@ -164,7 +164,7 @@ public class GameCycleManager : MonoBehaviour
     {
         // Reconnecter les références de la scène
         ghostCycleManager = FindFirstObjectByType<GhostCycleManager>();
-        directionalLight = GameObject.FindWithTag("Sun");             // FindFirstObjectByType<Light>();
+        directionalLight = GameObject.FindWithTag("Sun");             
         bell = FindFirstObjectByType<BellInteraction>();
         bellManager = FindFirstObjectByType<BellManager>();
 
