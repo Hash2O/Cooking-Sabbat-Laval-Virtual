@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb73555c1f09041b67e613296df52e, type: 3}
+  m_Name: Recipe Pour Developpeur
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Pour Developpeur
+  description: 
+  icon: {fileID: 0}
+  potionColor: {r: 1, g: 0, b: 1, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 2100000, guid: 43a24bf42fe302649ad9b2a7948419b5, type: 2}
+  requiredIngredients:
+  - {fileID: 11400000, guid: 017064dd6d929794da473224ceab5408, type: 2}
+  - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
+  - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
+  - {fileID: 11400000, guid: 18e4bdef1bf73fe489acc954a39c1ba5, type: 2}
+  ghostPrefab: {fileID: 4978837553210059881, guid: 6297b8d459e2e8c4ab42d18b88ae75c9, type: 3}
+  isKnownAtStart: 0

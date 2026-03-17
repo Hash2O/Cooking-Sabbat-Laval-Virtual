@@ -25,6 +25,7 @@ TagManager:
   - Herb
   - AudioSlider
   - Sun
+  - Os
   layers:
   - Default
   - TransparentFX

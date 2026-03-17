@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb73555c1f09041b67e613296df52e, type: 3}
+  m_Name: Recipe Philtre d'amour pour Bruce Wayne
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Philtre d'amour pour Bruce Wayne
+  description: 
+  icon: {fileID: 0}
+  potionColor: {r: 1, g: 0, b: 1, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 2100000, guid: 35397d4ef0703ca4d8f8e6d170be48c1, type: 2}
+  requiredIngredients:
+  - {fileID: 11400000, guid: cdc602dc3dc320444a5ba5239b004cec, type: 2}
+  - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
+  - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
+  ghostPrefab: {fileID: 7805313971252525704, guid: 4211cce60a0840e4d8b25d4410254623, type: 3}
+  isKnownAtStart: 0

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb73555c1f09041b67e613296df52e, type: 3}
+  m_Name: Recipe Mascara de la Sorciere
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Mascara de la Sorciere
+  description: 
+  icon: {fileID: 0}
+  potionColor: {r: 0.14571075, g: 0.084104665, b: 0.8490566, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 2100000, guid: e6f2acaa77dc56140aa76dcae07369e5, type: 2}
+  requiredIngredients:
+  - {fileID: 11400000, guid: d7a1eb9eea0b2bb42a754f4a598421ae, type: 2}
+  - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
+  - {fileID: 11400000, guid: 30f1d64c539f5c8448ee030729b4dcc9, type: 2}
+  - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
+  ghostPrefab: {fileID: 7908044644123086282, guid: 83145fee9954b5c4489ebe31fde5ac3c, type: 3}
+  isKnownAtStart: 0

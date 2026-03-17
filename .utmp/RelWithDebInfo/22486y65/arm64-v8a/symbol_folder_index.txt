@@ -1,0 +1,1 @@
+C:\Users\samue\Documents\Projets Unity\Laval Virtual\Demo-T-VIR-900-Project-story-scene\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\22486y65\obj\arm64-v8a

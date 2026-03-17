@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb73555c1f09041b67e613296df52e, type: 3}
+  m_Name: Recipe Moulin Vert
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Moulin Vert
+  description: 
+  icon: {fileID: 0}
+  potionColor: {r: 0.23529413, g: 0.35686275, b: 0.023529414, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 2100000, guid: 30814a878d0c21a4caf4d20fd2ac9629, type: 2}
+  requiredIngredients:
+  - {fileID: 11400000, guid: a5f5014937a7104439ddcfeb7accf39e, type: 2}
+  - {fileID: 11400000, guid: dba949693b5f5a144873aff98dae9cd0, type: 2}
+  - {fileID: 11400000, guid: a9440f8fadc973e429e8383784a8f13b, type: 2}
+  - {fileID: 11400000, guid: 6af347f87e6d15148b01b30b8fe6165e, type: 2}
+  - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
+  ghostPrefab: {fileID: 7492574387322186502, guid: a7c99d9058d0cdf4da3194c75de3a500, type: 3}
+  isKnownAtStart: 0
