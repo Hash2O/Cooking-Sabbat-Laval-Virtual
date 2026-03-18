@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8015161693338118254}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071069, y: 0.00000008940696, z: -0.000000069512325, w: 0.70710677}
-  m_LocalPosition: {x: -0, y: 0.3795, z: -0}
+  m_LocalPosition: {x: -0, y: 0.4, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 0.0001
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4800,7 +4800,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b420e2f1c8ac7784d9c44453799316a2, type: 2}
+  - {fileID: 2100000, guid: e9a0d04d58741164da9a9756aee5b721, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4846,7 +4846,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: -725012648089265939, guid: 5da07a44f2337d14989633227db76f16, type: 3}
+  m_Mesh: {fileID: -725012648089265939, guid: 1956573001143af4aafed7f617bee2ff, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
