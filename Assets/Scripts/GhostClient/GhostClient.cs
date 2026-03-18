@@ -24,11 +24,13 @@ public class GhostClient : MonoBehaviour
 
     public bool hasReceivedCorrectPotion = false;
     public GhostCycleManager manager;
+    public GhostCycleManagerEndless managerEndless;
 
     private void Start()
     {
         deliveryCounter = FindFirstObjectByType<PotionDeliveryCounter>();
         manager = FindFirstObjectByType<GhostCycleManager>();
+        managerEndless = FindFirstObjectByType<GhostCycleManagerEndless>();
     }
 
     private void Update()
@@ -114,6 +116,8 @@ public class GhostClient : MonoBehaviour
 
             if (manager != null)
                 manager.ApplyWrongPotionPenalty();
+            if (managerEndless != null)
+                managerEndless.ApplyWrongPotionPenalty();
 
             StartCoroutine(ChangeGhostColor(Color.black));
 
