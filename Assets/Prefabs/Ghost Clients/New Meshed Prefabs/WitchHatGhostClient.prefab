@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 8642843091606191337}
   - component: {fileID: 4039551560139539348}
   m_Layer: 0
-  m_Name: Ghost Witch Hat Canvas
+  m_Name: Bat Ghost Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29edd13945e38f048a51f1a76c744f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostClient
-  requestedRecipe: {fileID: 11400000, guid: 2f85e4707b82a44409cc25e7f9113fb6, type: 2}
+  requestedRecipe: {fileID: 11400000, guid: 5334f9946b9499a47b29b97bfa32bfef, type: 2}
   patienceBar: {fileID: 7952752752023938817}
   deliveryCounter: {fileID: 0}
   ghostRenderer: {fileID: 0}
@@ -573,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f72bc719d5ecbc147860be0dc3335ff2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.415
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f72bc719d5ecbc147860be0dc3335ff2, type: 3}
       propertyPath: m_LocalPosition.z
