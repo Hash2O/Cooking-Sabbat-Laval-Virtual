@@ -13,13 +13,14 @@ public class CoinTriggerDoor : MonoBehaviour
     public Animator doorAnimator;       // Animator de la porte (optionnel)
     public string openTriggerName = "Open"; // Nom du trigger dans l'Animator
     public AudioSource doorAudioSource;
+    public string doorID = "LibraryDoor";
 
     [Header("Référence compteur tirelire")]
     public TextMeshProUGUI compteurTirelire;
 
     [Header("Clé dans la serrure")]
     public XRSocketInteractor keySocket;    // La socket où la clé doit être placée
-    public string requiredKeyTag = "Key";   // Tag de l’objet-clé
+    public string requiredKeyTag = "LibraryKey";   // Tag de l’objet-clé
 
     [HideInInspector]
     public bool keyInserted = false;
@@ -89,6 +90,8 @@ public class CoinTriggerDoor : MonoBehaviour
         if (currentCoinsInTrigger >= requiredCoins && keyInserted)
         {
             doorOpened = true;
+
+            ExplorationProgressManager.ExplorationInstance.UnlockDoor(doorID);
 
             Debug.Log("Conditions remplies : ouverture de la porte !");
 

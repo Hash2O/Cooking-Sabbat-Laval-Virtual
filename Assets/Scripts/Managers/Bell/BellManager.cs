@@ -4,8 +4,14 @@ public class BellManager : MonoBehaviour
 {
     [SerializeField] private GhostCycleManager ghostManager;
     [SerializeField] private ParticleSystem startNotificationVFX;
+    [SerializeField] private BellInteraction bellInteraction;
 
     public bool isBellActivated = false;
+
+    private void Awake()
+    {
+        bellInteraction = GetComponent<BellInteraction>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,11 +21,11 @@ public class BellManager : MonoBehaviour
 
         if(isBellActivated == false)
         {
-            Debug.Log("Les clients fantômes sont invités à venir passer commande !");
-            isBellActivated = true;
+            //isBellActivated = true;
             startNotificationVFX.Play();
-            GameCycleManager.GameCycleInstance.StartNight();
-            if(ghostManager != null) ghostManager.gameObject.SetActive(true);
+            //GameCycleManager.GameCycleInstance.StartNight();
+            bellInteraction.TryActivateBell();
+            if (ghostManager != null) ghostManager.gameObject.SetActive(true);
         }
     }
 }
