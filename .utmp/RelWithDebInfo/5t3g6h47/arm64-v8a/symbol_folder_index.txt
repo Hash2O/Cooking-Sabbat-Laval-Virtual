@@ -1,1 +1,0 @@
-C:\Users\samue\Documents\Projets Unity\Laval Virtual\Cooking Sabbat Laval Virtual\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\5t3g6h47\obj\arm64-v8a
