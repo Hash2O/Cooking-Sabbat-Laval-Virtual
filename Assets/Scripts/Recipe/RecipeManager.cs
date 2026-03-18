@@ -107,7 +107,7 @@ public class RecipeManager : MonoBehaviour
             }
         }
 
-        Debug.Log($"📚 Recettes connues au départ : {knownRecipes.Count}");
+        Debug.Log($"Recettes connues au départ : {knownRecipes.Count}");
     }
 
     public void DiscoverRecipe(RecipeData recipe)
@@ -118,7 +118,7 @@ public class RecipeManager : MonoBehaviour
         knownRecipes.Add(recipe);
         discoveredRecipes.Add(recipe);
 
-        Debug.Log($"📖 Nouvelle recette découverte : {recipe.recipeName}");
+        Debug.Log($"Nouvelle recette découverte : {recipe.recipeName}");
         OnRecipeDiscovered?.Invoke(recipe);
     }
 

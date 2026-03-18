@@ -54,6 +54,7 @@ public class InfiniteBook : MonoBehaviour
     void OnRecipeDiscovered(RecipeData recipe)
     {
         BuildPagesFromRecipes(RecipeManager.RecipeInstance.GetKnownRecipes());
+        Debug.Log("Grimoire mis à jour !");
     }
 
     // On passe l'index en paramètre pour gérer la "Prévisualisation"
