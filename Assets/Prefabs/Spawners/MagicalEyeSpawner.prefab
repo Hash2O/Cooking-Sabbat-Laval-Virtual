@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSpawner
   ingredientID: Eye
-  availableAtStart: 1
+  availableAtStart: 0
 --- !u!1 &6428158396447991585
 GameObject:
   m_ObjectHideFlags: 0

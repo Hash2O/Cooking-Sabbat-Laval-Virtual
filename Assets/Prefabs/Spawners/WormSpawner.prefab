@@ -463,4 +463,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IngredientSpawner
   ingredientID: Worm
-  availableAtStart: 1
+  availableAtStart: 0

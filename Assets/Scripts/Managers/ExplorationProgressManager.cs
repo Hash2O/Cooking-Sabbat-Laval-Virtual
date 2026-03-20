@@ -183,6 +183,7 @@ public class ExplorationProgressManager : MonoBehaviour
     public int totalQuestItemsRequired = 6;
 
     // Spawners présents dans la scène actuelle
+    [SerializeField]
     private IngredientSpawner[] allSpawners;
 
     [System.Obsolete]

@@ -17,8 +17,8 @@ public class ShakeDetector : MonoBehaviour
     private float lastShakeTime;
     private float grabbedTime;
 
-    [SerializeField]
-    private AudioSource audioSource;
+    //[SerializeField]
+    //private AudioSource audioSource;
 
     [SerializeField]
     private List<GameObject> itemsInBooks = new(); 
@@ -31,7 +31,7 @@ public class ShakeDetector : MonoBehaviour
         grab.selectEntered.AddListener(_ => OnGrabbed());
         grab.selectExited.AddListener(_ => OnReleased());
 
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     void OnDestroy()
@@ -53,7 +53,7 @@ public class ShakeDetector : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!grab.isSelected) return; // seulement quand l�objet est tenu
+        if (!grab.isSelected) return; // seulement quand l'objet est tenu
 
         Vector3 currentVelocity = rb.linearVelocity;
         Vector3 accel = (currentVelocity - lastVelocity) / Time.fixedDeltaTime;
@@ -73,12 +73,12 @@ public class ShakeDetector : MonoBehaviour
     void OnShaken(Vector3 accel, float strength)
     {
         Debug.Log($"Shaken! accel={accel} strength={strength}");
-        // TODO : d�clencher ton effet (particules, son, etc.)
         if (strength > 100f)
         {
-            audioSource.Play();
-            int randomItemtIndex = Random.Range(0, itemsInBooks.Count);
-            Instantiate(itemsInBooks[randomItemtIndex], transform.position, transform.rotation);
+            if (AudioManager.audioInstance != null) AudioManager.audioInstance.PlayNotificationSound(3);
+            //audioSource.Play();
+            int randomItemIndex = Random.Range(0, itemsInBooks.Count);
+            Instantiate(itemsInBooks[randomItemIndex], transform.position, transform.rotation);
         }
     }
 }

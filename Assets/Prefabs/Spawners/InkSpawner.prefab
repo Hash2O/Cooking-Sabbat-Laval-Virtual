@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5094168258644323586}
   - component: {fileID: 5196468715420972429}
   m_Layer: 0
-  m_Name: Ichor Canvas
+  m_Name: Ink Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 1620455292948741493}
   - component: {fileID: 6214808666070842537}
   m_Layer: 0
-  m_Name: IchorSpawner
+  m_Name: InkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
