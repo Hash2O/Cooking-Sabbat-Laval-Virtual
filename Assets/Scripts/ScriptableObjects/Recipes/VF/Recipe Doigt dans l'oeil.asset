@@ -20,7 +20,7 @@ MonoBehaviour:
   pageMaterial: {fileID: 2100000, guid: ee72937214a5b06429ee168a8da66892, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
-  - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
   - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
+  - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
   ghostPrefab: {fileID: 7805313971252525704, guid: 99473b1cdc31b834799ac2c4a5d36138, type: 3}
   isKnownAtStart: 0

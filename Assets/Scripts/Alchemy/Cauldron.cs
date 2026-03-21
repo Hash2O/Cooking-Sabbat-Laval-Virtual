@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using System.Drawing;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -201,7 +200,7 @@ public class Cauldron : MonoBehaviour
 
     private List<RecipeData> FindMatchingRecipes()
     {
-        return RecipeManager.RecipeInstance.allRecipes
+        return RecipeManager.RecipeInstance.discoveredRecipes
             .Where(r => addedIngredients.All(i => r.requiredIngredients.Contains(i)))
             .ToList();
     }

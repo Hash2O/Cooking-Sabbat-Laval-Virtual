@@ -71,7 +71,7 @@ public class RecipeManager : MonoBehaviour
     //public List<RecipeData> startingRecipes = new();
 
     [Header("Recettes connues et/ou découvertes en jeu (DEBUG / SCORE)")]
-    [SerializeField] private List<RecipeData> discoveredRecipes = new();
+    public List<RecipeData> discoveredRecipes = new();
 
     private HashSet<RecipeData> knownRecipes = new();
 

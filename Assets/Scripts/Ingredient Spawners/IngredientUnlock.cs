@@ -19,7 +19,7 @@ public class IngredientUnlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Herb"))
+        if (other.CompareTag(ingredientID))
         {
             UnlockIngredient();
             Destroy(other.gameObject);

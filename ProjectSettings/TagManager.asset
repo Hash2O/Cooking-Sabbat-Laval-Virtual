@@ -27,6 +27,8 @@ TagManager:
   - Sun
   - Os
   - QuestItem
+  - Ink
+  - Rat
   layers:
   - Default
   - TransparentFX
