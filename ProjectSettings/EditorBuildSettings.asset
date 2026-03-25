@@ -5,18 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AlchemyStoryScene.unity
     guid: 38fb6bf9e080557448b0c13484721a6e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GardenScene.unity
     guid: 083eb68763e45ff4d8a6fdd76de0af90
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KitchenStoryScene.unity
     guid: 05aa4a3b2ca768d4ab74c657f6488623
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CemeteryScene.unity
     guid: 274394e1f2df39b4bafccd447b932b90
+  - enabled: 1
+    path: Assets/Scenes/AlchemyEndlessScene.unity
+    guid: a5b2819919428e040bd86fdb505cfa03
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
