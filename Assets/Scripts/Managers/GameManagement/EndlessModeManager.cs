@@ -16,7 +16,6 @@ public class EndlessModeManager : MonoBehaviour
     public float degres;
 
     private bool timeOut, timeUp, endSoundPlaying;
-    public TMP_Text debug;
 
     public AudioManager audioManager;
     public GhostCycleManagerEndless ghostCycleManagerEndless;
@@ -48,7 +47,6 @@ public class EndlessModeManager : MonoBehaviour
 
     public void AddBonusTime()
     {
-        debug.text += "AddBonusTime ";
         elapsedTime -= bonusTimeInSeconds;
         
         if (elapsedTime < 0f) 
@@ -56,14 +54,17 @@ public class EndlessModeManager : MonoBehaviour
             elapsedTime = 0f;
         }
         clockPointer.Rotate(0f, 0f, -(bonusTimeInSeconds * degres));
-        debug.text += "\nRotate pointer ";
-        audioManager.PlayTheGoodSound(12);
-        debug.text += "\nPlayTheGoodSound ";
-
+        StartCoroutine(DelayTickingSound());
         if (modeDurationInSeconds - elapsedTime > 6.5f)
         {
             endSoundPlaying = false;
         }
+    }
+
+    private IEnumerator DelayTickingSound()
+    {
+        yield return new WaitForSeconds(0.75f);
+        audioManager.PlayTheGoodSound(12);
     }
 
     public void StartCountdown()

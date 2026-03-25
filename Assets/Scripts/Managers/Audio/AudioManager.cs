@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
     {
 
         audioSource.PlayOneShot(_audioClips[index]);
-        Debug.Log("Sound n�" + index + " has been played successfully !");
+        //Debug.Log("Sound n�" + index + " has been played successfully !");
     }
 
     public void PlayGhostSound(int index)

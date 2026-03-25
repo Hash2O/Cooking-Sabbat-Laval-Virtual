@@ -15,9 +15,12 @@ MonoBehaviour:
   recipeName: Parisienne
   description: 
   icon: {fileID: -2578651400172810937, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  potionColor: {r: 0.44313726, g: 0.38039216, b: 0.20392157, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 0}
   requiredIngredients:
   - {fileID: 11400000, guid: 7eec49634d5f26d49ab44b9b9ebd1a49, type: 2}
   - {fileID: 11400000, guid: a9440f8fadc973e429e8383784a8f13b, type: 2}
   - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
-  potionColor: {r: 1, g: 0.8116174, b: 0, a: 0.49019608}
-  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  ghostPrefab: {fileID: 0}
+  isKnownAtStart: 1

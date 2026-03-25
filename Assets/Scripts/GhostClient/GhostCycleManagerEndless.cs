@@ -24,7 +24,7 @@ public class GhostCycleManagerEndless : MonoBehaviour
     public float maxWaitTime = 180f;
 
     [Header("Référence au compteur de citrouilles")]
-    [SerializeField] private PumpkinCounter pumpkinCounter;
+    //[SerializeField] private PumpkinCounter pumpkinCounter;
 
     [Header("Référence à la tirelire")]
     [SerializeField] private CoinTriggerDoor coinTrigger;
@@ -46,7 +46,7 @@ public class GhostCycleManagerEndless : MonoBehaviour
 
     private void Awake()
     {
-        pumpkinCounter = FindFirstObjectByType<PumpkinCounter>();
+        //pumpkinCounter = FindFirstObjectByType<PumpkinCounter>();
         coinTrigger = FindFirstObjectByType<CoinTriggerDoor>();
     }
 
@@ -92,7 +92,7 @@ public class GhostCycleManagerEndless : MonoBehaviour
             yield break;
         }
 
-        GameObject prefab = availableGhosts[Random.Range(0, availableGhosts.Count)];
+        GameObject prefab = availableGhosts[UnityEngine.Random.Range(0, availableGhosts.Count)];
         GameObject ghostObj = Instantiate(prefab, ghostSpawnPoint.position, Quaternion.identity);
         activeGhost = ghostObj.GetComponent<GhostClient>();
 
@@ -117,18 +117,18 @@ public class GhostCycleManagerEndless : MonoBehaviour
         if (activeGhost.isSatisfied)
         {
             GiveReward();
-            if (pumpkinCounter != null)
-            {
-                pumpkinCounter.RegisterSatisfiedClient();
-            }
+            // if (pumpkinCounter != null)
+            // {
+            //     pumpkinCounter.RegisterSatisfiedClient();
+            // }
         }
         else
         {
             Debug.Log("Le fantôme est parti frustré (pas de potion à temps).");
-            if (pumpkinCounter != null)
-            {
-                pumpkinCounter.RegisterUnsatisfiedClient();
-            }
+            // if (pumpkinCounter != null)
+            // {
+            //     pumpkinCounter.RegisterUnsatisfiedClient();
+            // }
         }
 
         // Départ du fantôme
@@ -172,17 +172,21 @@ public class GhostCycleManagerEndless : MonoBehaviour
         {
             if (isSatisfiedCheck())
             {
+                //Debug.Log("isSatisfiedCheck()");
                 if (activeGhost.patienceBar != null)
                     activeGhost.patienceBar.SetVisible(false);
                 if (activeGhost.ghostRenderer != null)
                 {
                     foreach(Material mat in activeGhost.ghostRenderer.materials)
+                    {
                         mat.SetFloat("_Alpha", Mathf.Lerp(activeGhost.ghostRenderer.material.GetFloat("_Alpha"), 1.0f, 0.75f));
+                    }
+                        
                 }
 
                 yield break;
             }
-
+            //Debug.Log("isSatisfiedCheck() = false");
             while (isPaused)
                 yield return null;
 
@@ -197,7 +201,9 @@ public class GhostCycleManagerEndless : MonoBehaviour
             {
                 float remainingPercent = remainingWaitTime / maxWaitTime;
                 foreach(Material mat in activeGhost.ghostRenderer.materials)
+                {
                     mat.SetFloat("_Alpha", remainingPercent);
+                }
             }
 
             yield return null;
@@ -212,8 +218,7 @@ public class GhostCycleManagerEndless : MonoBehaviour
         if (activeGhost.patienceBar != null) activeGhost.patienceBar.SetVisible(false); // Désactivation de la barre de patience
         if (coinTrigger != null) coinTrigger.CoinRemoving();    // Si pièce dans la tirelire, le fantôme en enlève une 
         if (AudioManager.audioInstance != null) AudioManager.audioInstance.PlayNotificationSound(1);    // Fail Notification Horror
-        if(postProcessManager != null)
-            postProcessManager.DarkenScreen();
+        
 
     }
 
@@ -221,6 +226,9 @@ public class GhostCycleManagerEndless : MonoBehaviour
     {
         remainingWaitTime -= wrongPotionPenalty;
         remainingWaitTime = Mathf.Max(remainingWaitTime, 0f);
+
+        if(postProcessManager != null)
+            postProcessManager.DarkenScreen();
 
         Debug.Log($"❌ Mauvaise potion ! -{wrongPotionPenalty} secondes de patience.");
     }

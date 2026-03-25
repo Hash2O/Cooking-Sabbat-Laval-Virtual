@@ -15,10 +15,13 @@ MonoBehaviour:
   recipeName: Best Of
   description: 
   icon: {fileID: -2217656884674354197, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  potionColor: {r: 0.32156864, g: 0.011764706, b: 0, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 0}
   requiredIngredients:
   - {fileID: 11400000, guid: a5f5014937a7104439ddcfeb7accf39e, type: 2}
   - {fileID: 11400000, guid: 7eec49634d5f26d49ab44b9b9ebd1a49, type: 2}
   - {fileID: 11400000, guid: 22faea027a132a14f89302df48098bf5, type: 2}
   - {fileID: 11400000, guid: cdc602dc3dc320444a5ba5239b004cec, type: 2}
-  potionColor: {r: 1, g: 0, b: 0, a: 0.6862745}
-  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  ghostPrefab: {fileID: 0}
+  isKnownAtStart: 1
