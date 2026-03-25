@@ -8,6 +8,7 @@ public class QuestItemCollectManager : MonoBehaviour
         {
             QuestItemPickup questItem = other.GetComponent<QuestItemPickup>();
             if(questItem != null) questItem.Collect();
+            if (AudioManager.audioInstance != null) AudioManager.audioInstance.PlayNotificationSound(3);
         }
     }
 }

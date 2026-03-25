@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 [RequireComponent(typeof(XRGrabInteractable))]
 public class ShakeDetector : MonoBehaviour
 {
-    public float shakeAccelerationThreshold = 20f;   // � ajuster
+    public float shakeAccelerationThreshold = 20f;   // a ajuster
     public float minShakeInterval = 2f;              // anti-spam
     public float minHoldTime = 0.5f;                 // temps mini tenu avant de d�tecter
 

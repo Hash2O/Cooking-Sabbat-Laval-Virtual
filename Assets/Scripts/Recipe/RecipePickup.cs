@@ -20,6 +20,7 @@ public class RecipePickup : MonoBehaviour
         {
             Debug.Log("Contact !");
             Collect();
+            if (AudioManager.audioInstance != null) AudioManager.audioInstance.PlayNotificationSound(3);
         }
     }
 }

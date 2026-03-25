@@ -11,7 +11,7 @@ showStatusBar = false
 scopes = {
 	"picker_window_position_offset.00000000" = "-88;127,5;402,5;550"
 	"picker_visibility_flags.00000000" = "0"
-	"picker_item_size.00000000" = "1"
+	"picker_item_size.00000000" = "32"
 	"picker_inspector.00000000" = "0"
 }
 providers = {
@@ -69,6 +69,13 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"xri right inter"
+	"xri ri"
+	"xri right intera"
+	"xri right"
+	"xri left "
+	""
+	"xri left"
 	"activate"
 	"select"
 	"right interaction "
@@ -82,13 +89,6 @@ recentSearches = [
 	"Right Interact"
 	"Right"
 	"right interaction"
-	"right interac"
-	"right interact"
-	"right "
-	"xri left interaction/"
-	"xri left interaction selec"
-	"xri left interact"
-	"xri left"
 ]
 searchItemFavorites = [
 ]
@@ -105,4 +105,4 @@ helperWidgetCurrentArea = "all"
 disabledIndexers = ""
 minIndexVariations = 2
 findProviderIndexHelper = true
-itemIconSize = 32
+itemIconSize = 0

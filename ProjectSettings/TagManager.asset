@@ -29,6 +29,9 @@ TagManager:
   - QuestItem
   - Ink
   - Rat
+  - Bone
+  - Mushroom
+  - Worm
   layers:
   - Default
   - TransparentFX

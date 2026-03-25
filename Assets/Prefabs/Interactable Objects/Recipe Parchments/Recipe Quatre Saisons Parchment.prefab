@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f05580a110f3624fb98fcfe979d5d89, type: 2}
     - target: {fileID: 919132149155446097, guid: e869bf7d2500be440908da2e7cb1a78d, type: 3}
       propertyPath: m_Name
-      value: Recipe Tetanos Parchment
+      value: Recipe Quatre Saisons Parchment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -268,4 +268,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2917c84d94d6a4d80c31df0a322ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipePickup
-  recipe: {fileID: 11400000, guid: 7ca8ddb089baf60429a4630ed5d2434d, type: 2}
+  recipe: {fileID: 11400000, guid: aefe4555a0dcdf640b82f38f24bbe102, type: 2}

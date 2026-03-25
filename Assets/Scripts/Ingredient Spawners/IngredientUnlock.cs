@@ -14,16 +14,19 @@ public class IngredientUnlock : MonoBehaviour
 
     public void UnlockIngredient()
     {
-        ExplorationProgressManager.ExplorationInstance.UnlockIngredient(ingredientID);
+        if(ExplorationProgressManager.ExplorationInstance != null) ExplorationProgressManager.ExplorationInstance.UnlockIngredient(ingredientID);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(ingredientID))
         {
+            Debug.Log("IngredientUnlock : Entrée");
             UnlockIngredient();
+            if (AudioManager.audioInstance != null) AudioManager.audioInstance.PlayNotificationSound(3);
             Destroy(other.gameObject);
             if (ingredientToSpawn != null) ingredientToSpawn.SetActive(true);
+            Debug.Log("IngredientUnlock : Sortie");
         }
     }
 }

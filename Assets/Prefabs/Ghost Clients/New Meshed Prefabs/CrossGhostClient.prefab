@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29edd13945e38f048a51f1a76c744f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostClient
-  requestedRecipe: {fileID: 11400000, guid: 331e32753c307bc4bb87f360133bf3b6, type: 2}
+  requestedRecipe: {fileID: 11400000, guid: ed02017f55e0e414ea25a2f4b3ef6f1c, type: 2}
   patienceBar: {fileID: 7952752752023938817}
   deliveryCounter: {fileID: 0}
   ghostRenderer: {fileID: 0}

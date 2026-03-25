@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 8642843091606191337}
   - component: {fileID: 4039551560139539348}
   m_Layer: 0
-  m_Name: Bat Ghost Canvas
+  m_Name: Ghost Top Hat Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29edd13945e38f048a51f1a76c744f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostClient
-  requestedRecipe: {fileID: 11400000, guid: 60cafed22d032864096b845f601204cc, type: 2}
+  requestedRecipe: {fileID: 11400000, guid: 28472af48bbbfd348807731158df727c, type: 2}
   patienceBar: {fileID: 7952752752023938817}
   deliveryCounter: {fileID: 0}
   ghostRenderer: {fileID: 0}
