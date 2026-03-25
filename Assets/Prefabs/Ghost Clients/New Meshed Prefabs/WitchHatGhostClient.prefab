@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 7492574387322186502}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -408,10 +408,11 @@ MonoBehaviour:
   requestedRecipe: {fileID: 11400000, guid: 5334f9946b9499a47b29b97bfa32bfef, type: 2}
   patienceBar: {fileID: 7952752752023938817}
   deliveryCounter: {fileID: 0}
-  ghostRenderer: {fileID: 0}
+  ghostRenderer: {fileID: 8616813483053827535}
   colorChangeSpeed: 4
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
+  managerEndless: {fileID: 0}
 --- !u!54 &8459710180158023758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -623,5 +624,10 @@ PrefabInstance:
 --- !u!4 &7484488801942224544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f72bc719d5ecbc147860be0dc3335ff2, type: 3}
+  m_PrefabInstance: {fileID: 6941321996812343627}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8616813483053827535 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f72bc719d5ecbc147860be0dc3335ff2, type: 3}
   m_PrefabInstance: {fileID: 6941321996812343627}
   m_PrefabAsset: {fileID: 0}

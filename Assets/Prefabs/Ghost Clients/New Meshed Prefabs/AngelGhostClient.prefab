@@ -483,10 +483,11 @@ MonoBehaviour:
   requestedRecipe: {fileID: 11400000, guid: f793b9ed24953da46b8f0d932ede6967, type: 2}
   patienceBar: {fileID: 5581975944775775107}
   deliveryCounter: {fileID: 0}
-  ghostRenderer: {fileID: 0}
+  ghostRenderer: {fileID: 2971035723602689617}
   colorChangeSpeed: 4
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
+  managerEndless: {fileID: 0}
 --- !u!54 &8013629818110357454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -611,6 +612,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: c65571568b7c4e440af21b0329d9959c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 786b1f065783e5d43962f0a1f9871931, type: 2}
     - target: {fileID: 919132149155446097, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
       propertyPath: m_Name
       value: GhostAngel
@@ -620,6 +625,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
+--- !u!23 &2971035723602689617 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
+  m_PrefabInstance: {fileID: 4538124971271512789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4138827726159775038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
