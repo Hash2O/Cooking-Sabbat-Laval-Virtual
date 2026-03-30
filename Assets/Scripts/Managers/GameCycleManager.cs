@@ -302,6 +302,7 @@ public class GameCycleManager : MonoBehaviour
     private Light directionalLightComponent;
     public BellInteraction bell;
     public BellManager bellManager;
+    public CalendarManager calendarManager;
 
     [Header("Objectifs")]
     public int baseGhostsFirstNight = 5;
@@ -349,6 +350,7 @@ public class GameCycleManager : MonoBehaviour
         directionalLight = GameObject.FindWithTag("Sun");
         bell = FindFirstObjectByType<BellInteraction>();
         bellManager = FindFirstObjectByType<BellManager>();
+        calendarManager = FindFirstObjectByType<CalendarManager>();
 
         if (directionalLight != null)
             directionalLightComponent = directionalLight.GetComponent<Light>();
@@ -364,6 +366,8 @@ public class GameCycleManager : MonoBehaviour
         currentTimeOfDay = TimeOfDay.Day;
         ApplyDayState();
         Debug.Log($"☀️ Jour {currentDay + 1}");
+        calendarManager.SunTime();
+        calendarManager.ChangeDay(currentDay + 1);
     }
 
     public void StartNight()
@@ -380,6 +384,8 @@ public class GameCycleManager : MonoBehaviour
         PumpkinCounter.PumpkinInstance.SetNightObjective(ghostsRequiredThisNight);
 
         Debug.Log($"🌙 Nuit {currentDay + 1}");
+
+        calendarManager.MoonTime();
 
         if (ghostCycleManager == null)
             ghostCycleManager = FindFirstObjectByType<GhostCycleManager>();

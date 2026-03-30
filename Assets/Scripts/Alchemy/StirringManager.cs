@@ -20,7 +20,8 @@ public class StirringManager : MonoBehaviour
     public float stirMultiplier; // Vitesse de progression (ajustable)
 
     [Header("Gestion de l'haptique")]
-    [SerializeField] private XRDirectInteractor controller;   // Main droite ou main gauche
+    [SerializeField] private XRDirectInteractor rightController;    // Main droite 
+    [SerializeField] private XRDirectInteractor leftController;     // Main gauche
     public float hapticInterval = 0.05f;
     private float hapticTimer = 0f;
 
@@ -34,11 +35,16 @@ public class StirringManager : MonoBehaviour
     private Coroutine fadeCoroutine;
     private float initialVolume;
 
+    private void Awake()
+    {
+        rightController = GameObject.FindGameObjectWithTag("RightHand").GetComponent<XRDirectInteractor>();
+        leftController = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<XRDirectInteractor>();
+    }
+
     private void Start()
     {
         ResetStirringValues();
         initialVolume = stirringLoopAudio.volume;
-        controller = GameObject.FindGameObjectWithTag("RightHand").GetComponent<XRDirectInteractor>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -100,7 +106,7 @@ public class StirringManager : MonoBehaviour
 
         if (isInBowl && intensity > 0.01f && hapticTimer <= 0f)
         {
-            controller.SendHapticImpulse(intensity, hapticInterval);
+            rightController.SendHapticImpulse(intensity, hapticInterval);
             hapticTimer = hapticInterval;
         }
 
