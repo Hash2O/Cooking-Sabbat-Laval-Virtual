@@ -2732,7 +2732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81019790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11875,7 +11875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &411122916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25116,6 +25116,7 @@ GameObject:
   - component: {fileID: 926108748}
   - component: {fileID: 926108747}
   - component: {fileID: 926108746}
+  - component: {fileID: 926108753}
   m_Layer: 2
   m_Name: XR Origin (VR)
   m_TagString: Player
@@ -25200,7 +25201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926108745}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a8d337e8bc7ac4498e0df29e7b8bd5e, type: 3}
   m_Name: 
@@ -25225,9 +25226,9 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InGameUIManager, Assembly-CSharp
-        m_MethodName: ToggleInGameUI
+      - m_Target: {fileID: 926108753}
+        m_TargetAssemblyTypeName: ToggleMovementModeManager, Assembly-CSharp
+        m_MethodName: ToggleMovementMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25313,6 +25314,23 @@ Transform:
   - {fileID: 1684175671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &926108753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926108745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43f8ab7314030f4caf040b3c8c49ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToggleMovementModeManager
+  teleportMode: {fileID: 1504201217}
+  rightHand: {fileID: 441502262}
+  continuousMoveMode: {fileID: 1521092338}
+  continuousTurnMode: {fileID: 1103737992}
+  isTeleportActivated: 0
 --- !u!1001 &926622497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42287,7 +42305,7 @@ GameObject:
   - component: {fileID: 1623342218}
   m_Layer: 0
   m_Name: Right Direct Interactor
-  m_TagString: Untagged
+  m_TagString: RightHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44499,6 +44517,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3841518606683737278, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841518606683737278, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ed2d433a8cd71f429ca4ad904b29320, type: 3}
     - target: {fileID: 3971892523905905152, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -44607,6 +44633,14 @@ PrefabInstance:
       propertyPath: cookingSpoon
       value: 
       objectReference: {fileID: 1558235332}
+    - target: {fileID: 6254617165318741353, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
+      propertyPath: fadeOutDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254617165318741353, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
+      propertyPath: stirringLoopAudio
+      value: 
+      objectReference: {fileID: 1677224001}
     - target: {fileID: 6417995682258614550, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.62624
@@ -44664,6 +44698,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
+--- !u!82 &1677224001 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3841518606683737278, guid: ed3dadba57330ab4eab87eb5ed1e903e, type: 3}
+  m_PrefabInstance: {fileID: 1677224000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1684175670
 GameObject:
   m_ObjectHideFlags: 0
@@ -51787,6 +51826,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 196c09401e9051c49828ac6c7fe0ffb7, type: 3}
+    - target: {fileID: 4631087979069042095, guid: ca0bc546603035d4f92adb7093c321d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4631087979069042095, guid: ca0bc546603035d4f92adb7093c321d8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

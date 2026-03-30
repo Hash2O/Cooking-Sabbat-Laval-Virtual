@@ -48,7 +48,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5322,7 +5322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 875c680642603464f815ecca903856dc, type: 3}
       propertyPath: m_Name
-      value: Liquid Poison Ingredient Bottle
+      value: Ingredient Poison
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 875c680642603464f815ecca903856dc, type: 3}
       propertyPath: m_TagString

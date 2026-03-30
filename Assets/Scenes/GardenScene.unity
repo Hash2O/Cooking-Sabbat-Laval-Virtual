@@ -2162,7 +2162,7 @@ GameObject:
   - component: {fileID: 325748311}
   - component: {fileID: 325748317}
   m_Layer: 0
-  m_Name: Garden Slot
+  m_Name: Quest Item Garden Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

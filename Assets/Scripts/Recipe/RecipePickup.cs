@@ -9,7 +9,6 @@ public class RecipePickup : MonoBehaviour
         if (recipe == null) return;
 
         RecipeManager.RecipeInstance.DiscoverRecipe(recipe);
-
         // Insérer  VFX ici (dissolve ?)
         Destroy(gameObject);
     }
@@ -18,7 +17,7 @@ public class RecipePickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Contact !");
+            Debug.Log("Nouvelle recette trouvée !");
             Collect();
             if (AudioManager.audioInstance != null) AudioManager.audioInstance.PlayNotificationSound(3);
         }

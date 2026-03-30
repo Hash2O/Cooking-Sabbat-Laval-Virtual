@@ -1,29 +1,44 @@
+ï»¿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;   // Pour la gestion de l'haptique sur StirringProcess
 
 public class StirringManager : MonoBehaviour
 {
-    [Header("Références")]
-    public Transform cauldronCenter;     // Centre du bol (un Empty placé au milieu)
-    public Transform cookingSpoon;          // La cuillère tenue par le joueur
-    public ParticleSystem stirEffect; // Optionnel : effet visuel quand ça mélange
+    [Header("RÃ©fÃ©rences")]
+    public Transform cauldronCenter;     // Centre du bol (un Empty placÃ© au milieu)
+    public Transform cookingSpoon;          // La cuillÃ¨re tenue par le joueur
+    public ParticleSystem stirEffect; // Optionnel : effet visuel quand Ã§a mÃ©lange
+    [SerializeField] private AudioSource stirringLoopAudio; // GÃ©rer le son du remuage
 
-    [Header("Paramètres")]
-    public float stirProgress;   // Progression du mélange [0..1]
-    public float requiredProgress; // Seuil pour finir le mélange
+    [Header("Audio Fade")]
+    public float fadeOutDuration = 0.5f;
+
+    [Header("ParamÃ¨tres")]
+    public float stirProgress;   // Progression du mÃ©lange [0..1]
+    public float requiredProgress; // Seuil pour finir le mÃ©lange
     public float stirMultiplier; // Vitesse de progression (ajustable)
+
+    [Header("Gestion de l'haptique")]
+    [SerializeField] private XRDirectInteractor controller;   // Main droite ou main gauche
+    public float hapticInterval = 0.05f;
+    private float hapticTimer = 0f;
 
     [HideInInspector]
     public bool isWellStirred;
 
-    public bool isInBowl = false;
-    private Vector3 lastSpoonPos;
-
     public Cauldron linkedCauldron;
+    public bool isInBowl = false;
+
+    private Vector3 lastSpoonPos;
+    private Coroutine fadeCoroutine;
+    private float initialVolume;
 
     private void Start()
     {
         ResetStirringValues();
+        initialVolume = stirringLoopAudio.volume;
+        controller = GameObject.FindGameObjectWithTag("RightHand").GetComponent<XRDirectInteractor>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,7 +47,7 @@ public class StirringManager : MonoBehaviour
         {
             isInBowl = true;
             lastSpoonPos = cookingSpoon.position;
-            Debug.Log("Cuillère dans le bol !");
+            Debug.Log("CuillÃ¨re dans le bol !");
         }
     }
 
@@ -41,7 +56,7 @@ public class StirringManager : MonoBehaviour
         if (other.transform == cookingSpoon)
         {
             isInBowl = false;
-            Debug.Log("Cuillère sortie du bol !");
+            Debug.Log("CuillÃ¨re sortie du bol !");
         }
     }
 
@@ -62,30 +77,74 @@ public class StirringManager : MonoBehaviour
         // Produit vectoriel pour estimer la "rotation" autour du centre du bol
         float circularity = Vector3.Cross(spoonOffsetLast, spoonOffsetNow).magnitude;
 
-        // Mise à jour de la progression
+        // Base du process de gestion du retour haptique
+        float intensity = Mathf.Clamp01(circularity * 50f);
+
+        // Mise Ã  jour de la progression
         stirProgress += circularity * stirMultiplier * Time.deltaTime;
 
-        // Feedback visuel : lancer des particules si présentes
+        // Feedback visuel : lancer des particules si prÃ©sentes
         if (stirEffect != null && !stirEffect.isPlaying && isInBowl)
         {
             stirEffect.Play();
-            AudioManager.audioInstance.PlayTheGoodSound(4);
-        }
-            
 
-        // Vérification si terminé
+            if (!stirringLoopAudio.isPlaying)
+            {
+                stirringLoopAudio.volume = initialVolume;
+                stirringLoopAudio.Play();
+            }
+        }
+
+        // Haptique : gÃ©rer la vibration
+        hapticTimer -= Time.deltaTime;
+
+        if (isInBowl && intensity > 0.01f && hapticTimer <= 0f)
+        {
+            controller.SendHapticImpulse(intensity, hapticInterval);
+            hapticTimer = hapticInterval;
+        }
+
+        // VÃ©rification si terminÃ©
         if (stirProgress >= requiredProgress)
         {
             stirProgress = requiredProgress;
             isWellStirred = true;
             if (stirEffect != null) stirEffect.Stop();
-            Debug.Log("Mélange terminé !");
+            //if (stirringLoopAudio.isPlaying) stirringLoopAudio.Stop();
+            if (stirringLoopAudio.isPlaying)
+            {
+                if (fadeCoroutine != null)
+                    StopCoroutine(fadeCoroutine);
+
+                fadeCoroutine = StartCoroutine(FadeOutAudio(stirringLoopAudio, fadeOutDuration));
+            }
+            Debug.Log("MÃ©lange terminÃ© !");
 
             if (linkedCauldron != null)
                 linkedCauldron.SendMessage("FinishRecipe", SendMessageOptions.DontRequireReceiver);
         }
 
         lastSpoonPos = cookingSpoon.position;
+    }
+
+    IEnumerator FadeOutAudio(AudioSource audioSource, float duration)
+    {
+        float startVolume = audioSource.volume;
+
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, time / duration);
+            yield return null;
+        }
+
+        audioSource.volume = 0f;
+        audioSource.Stop();
+
+        // Reset pour la prochaine utilisation
+        audioSource.volume = initialVolume;
     }
 
     public void ResetStirringValues()
