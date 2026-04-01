@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;   // Pour la gestion de l'haptique sur StirringProcess
 
 public class StirringManager : MonoBehaviour
@@ -20,10 +22,10 @@ public class StirringManager : MonoBehaviour
     public float stirMultiplier; // Vitesse de progression (ajustable)
 
     [Header("Gestion de l'haptique")]
-    [SerializeField] private XRDirectInteractor rightController;    // Main droite 
-    [SerializeField] private XRDirectInteractor leftController;     // Main gauche
+    [SerializeField] private XRGrabInteractable spoonInteractable;
     public float hapticInterval = 0.05f;
     private float hapticTimer = 0f;
+    private XRDirectInteractor currentInteractor;
 
     [HideInInspector]
     public bool isWellStirred;
@@ -37,8 +39,19 @@ public class StirringManager : MonoBehaviour
 
     private void Awake()
     {
-        rightController = GameObject.FindGameObjectWithTag("RightHand").GetComponent<XRDirectInteractor>();
-        leftController = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<XRDirectInteractor>();
+        spoonInteractable = GameObject.FindWithTag("Spoon").GetComponent<XRGrabInteractable>();
+        spoonInteractable.selectEntered.AddListener(OnGrab);
+        spoonInteractable.selectExited.AddListener(OnRelease);
+    }
+
+    private void OnGrab(SelectEnterEventArgs args)
+    {
+        currentInteractor = args.interactorObject as XRDirectInteractor;
+    }
+
+    private void OnRelease(SelectExitEventArgs args)
+    {
+        currentInteractor = null;
     }
 
     private void Start()
@@ -106,7 +119,10 @@ public class StirringManager : MonoBehaviour
 
         if (isInBowl && intensity > 0.01f && hapticTimer <= 0f)
         {
-            rightController.SendHapticImpulse(intensity, hapticInterval);
+            if (currentInteractor != null)
+            {
+                currentInteractor.SendHapticImpulse(intensity, hapticInterval);
+            }
             hapticTimer = hapticInterval;
         }
 

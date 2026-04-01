@@ -359,6 +359,20 @@ public class GameCycleManager : MonoBehaviour
             ApplyDayState();
         else
             ApplyNightState();
+
+        RefreshCalendarUI();
+    }
+
+    private void RefreshCalendarUI()
+    {
+        if (calendarManager == null) return;
+
+        calendarManager.ChangeDay(currentDay + 1);
+
+        if (currentTimeOfDay == TimeOfDay.Day)
+            calendarManager.SunTime();
+        else
+            calendarManager.MoonTime();
     }
 
     public void StartDay()

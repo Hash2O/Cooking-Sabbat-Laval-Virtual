@@ -9,14 +9,6 @@ public class CalendarManager : MonoBehaviour
     [SerializeField] private Image moonImage;
     [SerializeField] private TextMeshProUGUI numberText;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //SunTime();
-        //numberText.text = "";
-    }
-
     public void SunTime()
     {
         sunImage.gameObject.SetActive(true);

@@ -35,6 +35,7 @@ TagManager:
   - RightHand
   - Recipe
   - LeftHand
+  - Spoon
   layers:
   - Default
   - TransparentFX
