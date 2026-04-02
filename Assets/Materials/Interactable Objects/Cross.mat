@@ -107,6 +107,7 @@ Material:
     - _DissolveScale: 45
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _Emission: 0.5
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0

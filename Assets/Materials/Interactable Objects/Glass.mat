@@ -134,7 +134,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 1
     - _UVSec: 0
-    - _ViewSpecCutoff: 1
+    - _ViewSpecCutoff: 0.97
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 0
@@ -142,7 +142,7 @@ Material:
     - _BaseColor: {r: 0.6956435, g: 0.8726415, b: 0.84153104, a: 0.05882353}
     - _Color: {r: 0.6956435, g: 0.8726415, b: 0.84153104, a: 0.05882353}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GlassColor: {r: 0.6180134, g: 0.7004757, b: 0.70440245, a: 0.07058824}
+    - _GlassColor: {r: 0.62330896, g: 0.8117799, b: 0.8207547, a: 0.015686275}
     - _InnerRimColor: {r: 0.38756368, g: 0.57861626, b: 0.41772988, a: 1}
     - _OuterRimColor: {r: 0.19051856, g: 0.3584906, b: 0.30544677, a: 1}
     - _SpecColor: {r: 0.6051381, g: 0.81223696, b: 0.8867924, a: 1}
