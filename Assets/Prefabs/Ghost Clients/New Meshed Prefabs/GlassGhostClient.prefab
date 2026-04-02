@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 8129168481519162914}
   m_Layer: 0
   m_Name: GlassGhostClient
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,13 +480,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29edd13945e38f048a51f1a76c744f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostClient
-  requestedRecipe: {fileID: 11400000, guid: fba68950d5104b647b75c62f68097aa9, type: 2}
+  requestedRecipe: {fileID: 11400000, guid: 3bf6f3a0025b6b547a5bb0e7d1a328e2, type: 2}
   patienceBar: {fileID: 5581975944775775107}
   deliveryCounter: {fileID: 0}
   ghostRenderer: {fileID: 549738447028450175}
   colorChangeSpeed: 4
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
+  managerEndless: {fileID: 0}
+  audioManager: {fileID: 0}
+  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &8013629818110357454
 Rigidbody:
   m_ObjectHideFlags: 0

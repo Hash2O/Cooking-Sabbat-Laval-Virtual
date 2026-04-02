@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8087340574053493529}
   m_Layer: 0
   m_Name: PeterPanHatGhostClient
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29edd13945e38f048a51f1a76c744f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostClient
-  requestedRecipe: {fileID: 11400000, guid: 7ca8ddb089baf60429a4630ed5d2434d, type: 2}
+  requestedRecipe: {fileID: 11400000, guid: 2e2eb58f50d7c0345b98e92635ec3bf9, type: 2}
   patienceBar: {fileID: 6254805328288799806}
   deliveryCounter: {fileID: 0}
   ghostRenderer: {fileID: 8674258971040740206}
@@ -58,6 +58,8 @@ MonoBehaviour:
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
+  audioManager: {fileID: 0}
+  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &7253643604227352976
 Rigidbody:
   m_ObjectHideFlags: 0

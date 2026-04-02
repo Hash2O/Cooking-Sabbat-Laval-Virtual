@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 8129168481519162914}
   m_Layer: 0
   m_Name: AngelGhostClient
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,6 +488,8 @@ MonoBehaviour:
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
+  audioManager: {fileID: 0}
+  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &8013629818110357454
 Rigidbody:
   m_ObjectHideFlags: 0

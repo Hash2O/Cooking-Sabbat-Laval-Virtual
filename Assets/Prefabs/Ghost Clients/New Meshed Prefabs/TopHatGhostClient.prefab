@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 8301373308845383802}
   m_Layer: 0
   m_Name: TopHatGhostClient
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29edd13945e38f048a51f1a76c744f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostClient
-  requestedRecipe: {fileID: 11400000, guid: 28472af48bbbfd348807731158df727c, type: 2}
+  requestedRecipe: {fileID: 11400000, guid: 60cafed22d032864096b845f601204cc, type: 2}
   patienceBar: {fileID: 7952752752023938817}
   deliveryCounter: {fileID: 0}
   ghostRenderer: {fileID: 5168575310442607398}
@@ -413,6 +413,8 @@ MonoBehaviour:
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
+  audioManager: {fileID: 0}
+  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &8459710180158023758
 Rigidbody:
   m_ObjectHideFlags: 0
