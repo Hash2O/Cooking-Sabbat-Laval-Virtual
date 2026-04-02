@@ -485,13 +485,11 @@ MonoBehaviour:
   requestedRecipe: {fileID: 11400000, guid: 30365140168a04f4e9b5c805be9de8c8, type: 2}
   patienceBar: {fileID: 1921041529645966543}
   deliveryCounter: {fileID: 0}
-  ghostRenderer: {fileID: 5496969213320685668}
+  ghostRenderer: {fileID: 0}
   colorChangeSpeed: 4
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
-  audioManager: {fileID: 0}
-  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &7859828145122390919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -613,6 +611,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 0ff2bb419bb05cd428faa7912e131d0f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ba6b53b25247a47a8aea95db855801, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0ff2bb419bb05cd428faa7912e131d0f, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: c65571568b7c4e440af21b0329d9959c, type: 2}
@@ -629,11 +631,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff2bb419bb05cd428faa7912e131d0f, type: 3}
---- !u!23 &5496969213320685668 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 0ff2bb419bb05cd428faa7912e131d0f, type: 3}
-  m_PrefabInstance: {fileID: 6595730294259479776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6629866810049237771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ff2bb419bb05cd428faa7912e131d0f, type: 3}

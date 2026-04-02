@@ -58,8 +58,6 @@ MonoBehaviour:
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
-  audioManager: {fileID: 0}
-  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &7253643604227352976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -576,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77ffb65d75b9f1b47bed3ff5ffecf731, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77ffb65d75b9f1b47bed3ff5ffecf731, type: 3}
       propertyPath: m_LocalPosition.z

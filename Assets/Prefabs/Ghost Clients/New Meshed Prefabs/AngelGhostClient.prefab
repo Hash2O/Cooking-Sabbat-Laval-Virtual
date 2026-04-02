@@ -488,8 +488,6 @@ MonoBehaviour:
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
-  audioManager: {fileID: 0}
-  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &8013629818110357454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -611,9 +609,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c65571568b7c4e440af21b0329d9959c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 786b1f065783e5d43962f0a1f9871931, type: 2}
     - target: {fileID: -7511558181221131132, guid: 1c196df3728f8254d80f6a2d9db297bd, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 

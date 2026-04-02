@@ -413,8 +413,6 @@ MonoBehaviour:
   hasReceivedCorrectPotion: 0
   manager: {fileID: 0}
   managerEndless: {fileID: 0}
-  audioManager: {fileID: 0}
-  brokenGlassFX: {fileID: 8863172248260199484, guid: 2372614a36d20fa48a03eab71f52c587, type: 3}
 --- !u!54 &8459710180158023758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -610,6 +608,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f72bc719d5ecbc147860be0dc3335ff2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f6dcd5a330e2fe04b84cfe66f55babf5, type: 2}
     - target: {fileID: -7511558181221131132, guid: f72bc719d5ecbc147860be0dc3335ff2, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
