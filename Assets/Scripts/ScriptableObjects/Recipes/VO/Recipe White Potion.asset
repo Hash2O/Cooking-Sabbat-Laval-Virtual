@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: Philtre d'amour pour Bruce Wayne
   description: 
   icon: {fileID: -2578651400172810937, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
-  potionColor: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 1}
+  potionColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 0}
   requiredIngredients:

@@ -23,4 +23,4 @@ MonoBehaviour:
   specialEffects:
   - 
   potency: 1
-  colorHint: {r: 0.84276724, g: 0.56993604, b: 0.55389416, a: 1}
+  colorHint: {r: 0.582, g: 0.39251167, b: 0.38168377, a: 1}

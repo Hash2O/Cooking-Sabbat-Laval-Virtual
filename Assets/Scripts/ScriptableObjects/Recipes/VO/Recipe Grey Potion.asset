@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: "Au d\xE9c\xE8s"
   description: 
   icon: {fileID: -2578651400172810937, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
-  potionColor: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
+  potionColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: ec2f189ba6bb11e4db8ce796d020f36e, type: 2}
   requiredIngredients:

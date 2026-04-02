@@ -21,4 +21,4 @@ MonoBehaviour:
   tastes: 04000000
   specialEffects: []
   potency: 1
-  colorHint: {r: 0.8490566, g: 0.43205082, b: 0.36044845, a: 1}
+  colorHint: {r: 0.61, g: 0.38390473, b: 0.34587002, a: 1}

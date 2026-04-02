@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: Best Of
   description: 
   icon: {fileID: -2217656884674354197, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
-  potionColor: {r: 0.32156864, g: 0.011764706, b: 0, a: 1}
+  potionColor: {r: 0.5660378, g: 0.043859452, b: 0.024029896, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 0}
   requiredIngredients:

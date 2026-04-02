@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: "Pour d\xE9veloppeur"
   description: 
   icon: {fileID: 21300000, guid: 62307226ea02d51408ead85fc082db1f, type: 3}
-  potionColor: {r: 0.3882353, g: 0.11372549, b: 0.23529412, a: 1}
+  potionColor: {r: 0.764151, g: 0.10453011, b: 0.39862862, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 0}
   requiredIngredients:
