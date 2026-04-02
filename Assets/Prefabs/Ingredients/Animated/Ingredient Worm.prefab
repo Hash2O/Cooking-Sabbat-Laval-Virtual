@@ -249,7 +249,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf19a08580a25045a9af83f3f00aad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VerminTrigger
-  speed: 0.15
+  animator: {fileID: 0}
+  walkSpeed: 0.15
+  rotationSpeed: 8
+  pathPoints: []
+  actualPoint: {fileID: 0}
+  switchDistance: 0.1
 --- !u!1001 &2807488624686814934
 PrefabInstance:
   m_ObjectHideFlags: 0
