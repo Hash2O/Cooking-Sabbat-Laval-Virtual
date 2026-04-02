@@ -26,6 +26,7 @@ public class GhostClient : MonoBehaviour
     public GhostCycleManager manager;
     public GhostCycleManagerEndless managerEndless;
 
+
     private void Start()
     {
         deliveryCounter = FindFirstObjectByType<PotionDeliveryCounter>();
@@ -84,11 +85,10 @@ public class GhostClient : MonoBehaviour
     //    }
     //}
 
-    public IEnumerator ReceivePotion(int time, PotionBottle bottle)
+    public IEnumerator ReceivePotion(float time, PotionBottle bottle)
     {
         if (isEvaluatingPotion)
             yield break;
-
         isEvaluatingPotion = true;
 
         if (bottle == null || bottle.GetContainedRecipe() == null)
@@ -96,7 +96,7 @@ public class GhostClient : MonoBehaviour
             isEvaluatingPotion = false;
             yield break;
         }
-
+        
         RecipeData received = bottle.GetContainedRecipe();
 
         yield return new WaitForSeconds(time);
@@ -251,4 +251,8 @@ public class GhostClient : MonoBehaviour
         rend.materials = mats;
     }
 
+    public void TriggerReceivePotion(float time, PotionBottle bottle)
+    {
+        StartCoroutine(ReceivePotion(time, bottle)); 
+    }
 }

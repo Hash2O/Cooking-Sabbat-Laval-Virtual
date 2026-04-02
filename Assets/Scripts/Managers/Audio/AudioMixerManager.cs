@@ -6,23 +6,12 @@ using UnityEngine.UI;
 public class AudioMixerManager : MonoBehaviour
 {
     [SerializeField] AudioMixer _audioMixer;
-    [SerializeField] Slider _bgmSlider;
-
-    private void Awake()
-    { 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void Start()
     {
-        GameObject sliderToFind = GameObject.FindWithTag("AudioSlider");
-        //Debug.Log("sliderToFind : " + sliderToFind.name);
-        if(sliderToFind != null) _bgmSlider = sliderToFind.GetComponentInChildren<Slider>();
-    }
-
-    void Update()
-    {
-        float bgmFloat = _bgmSlider.value;
+        float bgmFloat = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
+        
+        bgmFloat = Mathf.Max(0.0001f, bgmFloat);
+        
         _audioMixer.SetFloat("VolumeMaster", Mathf.Log10(bgmFloat) * 20);
     }
 }

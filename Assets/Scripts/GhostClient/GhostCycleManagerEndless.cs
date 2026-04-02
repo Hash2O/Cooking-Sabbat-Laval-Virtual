@@ -14,6 +14,7 @@ public class GhostCycleManagerEndless : MonoBehaviour
     //public List<GameObject> ghostPrefabs;
     public List<GameObject> availableGhosts = new();
     private GhostClient activeGhost;
+    private bool firstGhost = true;
 
     [Header("Timers")]
     public float spawnDelay = 2f;
@@ -24,7 +25,7 @@ public class GhostCycleManagerEndless : MonoBehaviour
     public float maxWaitTime = 180f;
 
     [Header("Référence au compteur de citrouilles")]
-    //[SerializeField] private PumpkinCounter pumpkinCounter;
+    [SerializeField] private PumpkinCounterEndless pumpkinCounter;
 
     [Header("Référence à la tirelire")]
     [SerializeField] private CoinTriggerDoor coinTrigger;
@@ -46,12 +47,13 @@ public class GhostCycleManagerEndless : MonoBehaviour
 
     private void Awake()
     {
-        //pumpkinCounter = FindFirstObjectByType<PumpkinCounter>();
+        pumpkinCounter = FindFirstObjectByType<PumpkinCounterEndless>();
         coinTrigger = FindFirstObjectByType<CoinTriggerDoor>();
     }
 
     private void Start()
     {
+        firstGhost = true;
         StartCoroutine(GhostCycleLoop());
         if(endlessModeManager != null) endlessModeManager.StartCountdown();
     }
@@ -92,7 +94,16 @@ public class GhostCycleManagerEndless : MonoBehaviour
             yield break;
         }
 
-        GameObject prefab = availableGhosts[UnityEngine.Random.Range(0, availableGhosts.Count)];
+        GameObject prefab;
+        if(firstGhost)
+        {
+            prefab = availableGhosts[6];
+            firstGhost = false;
+        }
+        else
+        {
+            prefab = availableGhosts[UnityEngine.Random.Range(0, availableGhosts.Count)];
+        }
         GameObject ghostObj = Instantiate(prefab, ghostSpawnPoint.position, Quaternion.identity);
         activeGhost = ghostObj.GetComponent<GhostClient>();
 
@@ -117,18 +128,18 @@ public class GhostCycleManagerEndless : MonoBehaviour
         if (activeGhost.isSatisfied)
         {
             GiveReward();
-            // if (pumpkinCounter != null)
-            // {
-            //     pumpkinCounter.RegisterSatisfiedClient();
-            // }
+            if (pumpkinCounter != null)
+            {
+                pumpkinCounter.RegisterSatisfiedClient();
+            }
         }
         else
         {
             Debug.Log("Le fantôme est parti frustré (pas de potion à temps).");
-            // if (pumpkinCounter != null)
-            // {
-            //     pumpkinCounter.RegisterUnsatisfiedClient();
-            // }
+            if (pumpkinCounter != null)
+            {
+                pumpkinCounter.RegisterUnsatisfiedClient();
+            }
         }
 
         // Départ du fantôme
@@ -172,7 +183,6 @@ public class GhostCycleManagerEndless : MonoBehaviour
         {
             if (isSatisfiedCheck())
             {
-                //Debug.Log("isSatisfiedCheck()");
                 if (activeGhost.patienceBar != null)
                     activeGhost.patienceBar.SetVisible(false);
                 if (activeGhost.ghostRenderer != null)
@@ -180,13 +190,16 @@ public class GhostCycleManagerEndless : MonoBehaviour
                     foreach(Material mat in activeGhost.ghostRenderer.materials)
                     {
                         mat.SetFloat("_Alpha", Mathf.Lerp(activeGhost.ghostRenderer.material.GetFloat("_Alpha"), 1.0f, 0.75f));
+                        if ( mat.name == "Ghost (Instance)" ) 
+                        {
+                            mat.SetColor("_MainColor",Color.Lerp(activeGhost.ghostRenderer.material.GetColor("_MainColor"), activeGhost.requestedRecipe.potionColor, 1.5f));
+                        }
                     }
                         
                 }
 
                 yield break;
             }
-            //Debug.Log("isSatisfiedCheck() = false");
             while (isPaused)
                 yield return null;
 
@@ -244,5 +257,18 @@ public class GhostCycleManagerEndless : MonoBehaviour
 
         if (endlessModeManager != null)
             endlessModeManager.AddBonusTime();
+
+        FindFirstObjectByType<ScoreManagerEndless>().AddSuccessfulOrder(activeGhost.name);
+    }
+
+    public IEnumerator EndGame()
+    {
+        StopAllCoroutines();
+        foreach(Material mat in activeGhost.ghostRenderer.materials)
+                mat.SetFloat("_Alpha", Mathf.Lerp(activeGhost.ghostRenderer.material.GetFloat("_Alpha"), 0.0f, 0.35f));
+        
+        yield return new WaitForSeconds(0.5f);
+        Destroy(activeGhost.gameObject);
+        activeGhost = null;
     }
 }

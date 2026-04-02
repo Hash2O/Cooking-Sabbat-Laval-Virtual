@@ -53,6 +53,8 @@ public class StirringManager : MonoBehaviour
     {
         currentInteractor = null;
     }
+    private Coroutine twirlCoroutine;
+    private bool isTwirling = false;
 
     private void Start()
     {
@@ -106,14 +108,22 @@ public class StirringManager : MonoBehaviour
         if (stirEffect != null && !stirEffect.isPlaying && isInBowl)
         {
             stirEffect.Play();
-
             if (!stirringLoopAudio.isPlaying)
             {
                 stirringLoopAudio.volume = initialVolume;
                 stirringLoopAudio.Play();
             }
         }
-
+        if (!isTwirling)
+        {
+            isTwirling = true;
+            
+            if (twirlCoroutine != null) StopCoroutine(twirlCoroutine);
+            
+            float currentTwirl = linkedCauldron.liquidRenderer.material.GetFloat("_UseTwirl");
+            twirlCoroutine = StartCoroutine(TransitionTwirl(currentTwirl, 1f, 1.5f));
+        }
+        
         // Haptique : gérer la vibration
         hapticTimer -= Time.deltaTime;
 
@@ -131,6 +141,10 @@ public class StirringManager : MonoBehaviour
         {
             stirProgress = requiredProgress;
             isWellStirred = true;
+            if (twirlCoroutine != null) StopCoroutine(twirlCoroutine);
+            float currentTwirl = linkedCauldron.liquidRenderer.material.GetFloat("_UseTwirl");
+            twirlCoroutine = StartCoroutine(TransitionTwirl(currentTwirl, 0f, 1.5f));
+
             if (stirEffect != null) stirEffect.Stop();
             //if (stirringLoopAudio.isPlaying) stirringLoopAudio.Stop();
             if (stirringLoopAudio.isPlaying)
@@ -175,5 +189,21 @@ public class StirringManager : MonoBehaviour
         requiredProgress = 2f;
         stirMultiplier = 150f;
         isWellStirred = false;
+        isTwirling = false;
+    }
+
+    // Appelle cette Coroutine quand tu veux lancer la transition
+    public IEnumerator TransitionTwirl(float min, float max, float duration)
+    {
+        float timeElapsed = 0f;
+
+        while (timeElapsed < duration)
+        {
+            float t = timeElapsed / duration; 
+            linkedCauldron.liquidRenderer.material.SetFloat("_UseTwirl", Mathf.Lerp(min, max, t));
+            timeElapsed += Time.deltaTime;
+            yield return null; 
+        }
+        linkedCauldron.liquidRenderer.material.SetFloat("_UseTwirl", max);
     }
 }

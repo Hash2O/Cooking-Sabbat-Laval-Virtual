@@ -16,7 +16,7 @@ public class PotionDeliveryCounter : MonoBehaviour
         if (bottle != null)
         {
             currentBottle = bottle;
-            Debug.Log("Une potion a été posée sur le comptoir.");
+            Debug.Log("Une potion a Ã©tÃ© posÃ©e sur le comptoir.");
         }
     }
 
@@ -27,11 +27,11 @@ public class PotionDeliveryCounter : MonoBehaviour
         if (bottle != null && bottle == currentBottle)
         {
             currentBottle = null;
-            Debug.Log("La potion a été retirée du comptoir.");
+            Debug.Log("La potion a Ã©tÃ© retirÃ©e du comptoir.");
         }
     }
 
-    // Optionnel : méthode pour consommer la potion
+    // Optionnel : mï¿½thode pour consommer la potion
     public PotionBottle TakeBottle()
     {
         PotionBottle bottle = currentBottle;

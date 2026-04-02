@@ -3,39 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Anchor
-  - EmptyBottle
-  - Ingredient
-  - Cauldron
-  - ResetCauldron
-  - Ichor
-  - Poison
-  - Vermin
-  - RecipeBook
-  - Delivery
-  - Coin
-  - Key
-  - SimiliNavMesh
-  - LibraryKey
-  - GardenKey
-  - CemeteryKey
-  - AtticKey
-  - RoomKey
-  - Herb
-  - AudioSlider
-  - Sun
-  - Os
-  - QuestItem
-  - Ink
-  - Rat
-  - Bone
-  - Mushroom
-  - Worm
-  - RightHand
-  - Recipe
-  - LeftHand
-  - Spoon
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -43,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Sliceable
-  - Secret
-  - Ray
-  - Key
-  - Door
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -75,10 +43,3 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7

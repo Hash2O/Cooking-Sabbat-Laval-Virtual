@@ -16,8 +16,6 @@ public class EndlessModeManager : MonoBehaviour
     public float degres;
 
     private bool timeOut, timeUp, endSoundPlaying;
-
-    public AudioManager audioManager;
     public GhostCycleManagerEndless ghostCycleManagerEndless;
     void Start()
     {
@@ -64,7 +62,7 @@ public class EndlessModeManager : MonoBehaviour
     private IEnumerator DelayTickingSound()
     {
         yield return new WaitForSeconds(0.75f);
-        audioManager.PlayTheGoodSound(12);
+        AudioManager.audioInstance.PlayTheGoodSound(12);
     }
 
     public void StartCountdown()
@@ -75,7 +73,7 @@ public class EndlessModeManager : MonoBehaviour
 
     private void EndSound()
     {  
-        audioManager.PlayTheGoodSound(13);
+        AudioManager.audioInstance.PlayTheGoodSound(13);
         endSoundPlaying = true;
     }
     private IEnumerator SecondPointerMovement()
@@ -92,5 +90,7 @@ public class EndlessModeManager : MonoBehaviour
         timeOut = true;
         if(ghostCycleManagerEndless != null)
             ghostCycleManagerEndless.endlessModeTimeOut = timeOut;
+        StartCoroutine(ghostCycleManagerEndless.EndGame());
+        FindFirstObjectByType<ScoreManagerEndless>().TriggerEndGame();
     }
 }

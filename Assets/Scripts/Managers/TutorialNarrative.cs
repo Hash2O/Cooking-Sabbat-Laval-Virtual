@@ -8,6 +8,12 @@ public class TutorialNarrative : MonoBehaviour
 
     void Start()
     {
+        bool subtitlesEnabled = PlayerPrefs.GetInt("SubtitlesEnabled", 1) == 1;
+    
+        if (!subtitlesEnabled)
+        {
+            // Désactiver ta piste de sous-titres ou le GameObject associé ici
+        }
         if (ExplorationProgressManager.ExplorationInstance.IsEventCompleted(eventID))
         {
             return;

@@ -33,8 +33,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayTheGoodSound(int index)
     {
-
-        audioSource.PlayOneShot(_audioClips[index]);
+        if(index <= _audioClips.Count - 1)
+            audioSource.PlayOneShot(_audioClips[index]);
         //Debug.Log("Sound n�" + index + " has been played successfully !");
     }
 
