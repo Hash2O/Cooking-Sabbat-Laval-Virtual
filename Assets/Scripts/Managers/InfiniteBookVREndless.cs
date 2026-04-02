@@ -34,8 +34,8 @@ public class InfiniteBookEndless : MonoBehaviour
     private bool isGrabbing = false;
     private string activeStateName; 
     private Vector3 localHandPos;
-
     private bool isTurningNext; 
+    private bool hasPlayedTurnSound = false;
 
     [Header("Réglages de Direction")]
     public Vector3 pageDirection = new Vector3(-1, 0, 0); 
@@ -43,6 +43,10 @@ public class InfiniteBookEndless : MonoBehaviour
     [Header("Livre Infini")]
     public int totalPages = 4; 
     public int currentPageIndex = 0; 
+
+    [Header("Interaction")]
+    public Collider pageColliderRight;
+    public Collider pageColliderLeft;
 
     private void Start()
     {
@@ -132,6 +136,8 @@ public class InfiniteBookEndless : MonoBehaviour
 
         bookAnimator.speed = 0;
         ApplyAnimation(currentProgress);
+
+        hasPlayedTurnSound = false;
     }
 
     public void EndGrab(SelectExitEventArgs args)
@@ -167,6 +173,17 @@ public class InfiniteBookEndless : MonoBehaviour
         
         currentProgress = Mathf.Clamp01(newProgress);
         ApplyAnimation(currentProgress);
+
+        if (!hasPlayedTurnSound && currentProgress > 0.15f && currentProgress < 0.85f)
+        {
+            
+            Debug.Log(AudioManager.audioInstance);
+            if (AudioManager.audioInstance != null) 
+            {
+                AudioManager.audioInstance.PlayTheGoodSound(Random.Range(17,20));
+            }
+            hasPlayedTurnSound = true; 
+        }
     }
 
     void ApplyAnimation(float progress)
@@ -179,13 +196,17 @@ public class InfiniteBookEndless : MonoBehaviour
 
     System.Collections.IEnumerator SmoothFinish(float targetValue)
     {
-        float duration = 0.2f;
+        if (pageColliderRight != null) 
+            pageColliderRight.enabled = false;
+        if (pageColliderLeft != null) 
+            pageColliderLeft.enabled = false;
+
+        float duration = 0.4f;
         float startValue = currentProgress;
         float time = 0;
 
         while (time < duration)
         {
-            if (isGrabbing) yield break;
             time += Time.deltaTime;
             currentProgress = Mathf.Lerp(startValue, targetValue, time / duration);
             ApplyAnimation(currentProgress);
@@ -223,5 +244,10 @@ public class InfiniteBookEndless : MonoBehaviour
         // C'est ce qui crée l'illusion d'infini.
         currentProgress = 0f;
         ApplyAnimation(currentProgress);
+
+        if (pageColliderRight != null) 
+            pageColliderRight.enabled = true;
+        if (pageColliderLeft != null) 
+            pageColliderLeft.enabled = true;
     }
 }
