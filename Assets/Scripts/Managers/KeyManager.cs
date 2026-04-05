@@ -33,15 +33,14 @@ public class KeyManager : MonoBehaviour
     public void SpawnKey(int dayIndex)
     {
         if (dayIndex >= manorKeys.Count) return;
-
         var key = manorKeys[dayIndex];
-
         if (key.obtained) return;
-
         Instantiate(key.keyPrefab, spawnPoint.position, Quaternion.identity);
+        if (AudioManager.audioInstance != null) 
+            AudioManager.audioInstance.PlayItemSound(0);
         key.obtained = true;
-
-        Debug.Log($"Clé obtenue pour : {key.roomName}");
+    
+        Debug.Log($"ClÃ© obtenue pour : {key.roomName}");
     }
 }
 

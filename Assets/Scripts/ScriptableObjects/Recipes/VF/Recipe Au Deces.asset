@@ -15,12 +15,12 @@ MonoBehaviour:
   recipeName: Au Deces
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 0.12054582, g: 0.105175346, b: 0.7688679, a: 1}
+  potionColor: {r: 0.31132078, g: 0.3098523, b: 0.3098523, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: 0ddd07b0b1083354b8242694d297a30d, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
   - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
   - {fileID: 11400000, guid: 6af347f87e6d15148b01b30b8fe6165e, type: 2}
-  ghostPrefab: {fileID: 7492574387322186502, guid: 817e12dfa366c8442a96de51703105b9, type: 3}
+  ghostPrefab: {fileID: 7492574387322186502, guid: 1f28784055c172249bee9c9c934c8c36, type: 3}
   isKnownAtStart: 1

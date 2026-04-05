@@ -25,6 +25,16 @@ public class GameMenuManager : MonoBehaviour
     public Sprite spriteHover;
     public Sprite spriteSelected;
 
+    [Header("Boutons de Temps (Endless)")]
+    public Button btnTime3;
+    public Button btnTime5;
+    public Button btnTime10;
+    private int selectedTime = 3;
+    [Tooltip("Sprites spécifiques pour les boutons de temps")]
+    public Sprite spriteTimeNormal;
+    public Sprite spriteTimeHover;
+    public Sprite spriteTimeSelected;
+
     [Header("Audio Settings")]
     public AudioMixer mainAudioMixer;
     public string musicParameterName = "VolumeMaster";
@@ -56,6 +66,7 @@ public class GameMenuManager : MonoBehaviour
 
         HideAllPanelsInstantly();
         UpdateModeVisuals();
+        UpdateTimeVisuals();
         
         // On affiche le menu principal au démarrage SANS animation de page
         TransitionToPanel(mainPanel, false, true);
@@ -64,9 +75,7 @@ public class GameMenuManager : MonoBehaviour
     {
         if (bookAnimator != null) Debug.Log("Vitesse actuelle : " + bookAnimator.speed);
     }
-    // ==========================================
-    // GESTION DES OPTIONS ET SAUVEGARDE
-    // ==========================================
+  
     private void LoadSettings()
     {
         float savedMusicVol = PlayerPrefs.GetFloat("MusicVolume", 0.8f);
@@ -106,9 +115,7 @@ public class GameMenuManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // ==========================================
-    // LOGIQUE DE JEU
-    // ==========================================
+   
     public void SelectModeStory() 
     { 
         selectedMode = "Story"; 
@@ -119,7 +126,30 @@ public class GameMenuManager : MonoBehaviour
         selectedMode = "TimeAttack"; 
         UpdateModeVisuals();
     }
+    public void SelectTime3()  { SetEndlessTime(3); }
+    public void SelectTime5()  { SetEndlessTime(5); }
+    public void SelectTime10() { SetEndlessTime(10); }
 
+    private void SetEndlessTime(int minutes)
+    {
+        selectedTime = minutes;
+        PlayerPrefs.SetInt("EndlessDuration", selectedTime);
+        PlayerPrefs.Save();
+        UpdateTimeVisuals();
+    }
+
+    private void UpdateTimeVisuals()
+    {
+        if (btnTime3 != null)  
+            btnTime3.image.sprite =  (selectedTime == 3)  ? spriteTimeSelected : spriteTimeNormal;
+            
+        if (btnTime5 != null)  
+            btnTime5.image.sprite =  (selectedTime == 5)  ? spriteTimeSelected : spriteTimeNormal;
+            
+        if (btnTime10 != null) 
+            btnTime10.image.sprite = (selectedTime == 10) ? spriteTimeSelected : spriteTimeNormal;
+    }
+    
     public void LaunchGame()
     {
         string sceneToLoad = (selectedMode == "Story") ? storySceneName : timeAttackSceneName;
@@ -135,9 +165,7 @@ public class GameMenuManager : MonoBehaviour
         #endif
     }
 
-    // ==========================================
-    // GESTION DE L'INTERFACE, DOTWEEN & ANIMATIONS
-    // ==========================================
+ 
     
     // Si on retourne au menu principal, c'est un retour en arrière (isGoingBack = true)
     public void OpenMainPanel() { TransitionToPanel(mainPanel, true); }
@@ -229,6 +257,12 @@ public class GameMenuManager : MonoBehaviour
                     btn.image.sprite = spriteHover;
                 else if (btn == btnModeTimeAttack && selectedMode != "TimeAttack") 
                     btn.image.sprite = spriteHover;
+                else if (btn == btnTime3 && selectedTime != 3) 
+                    btn.image.sprite = spriteTimeHover;
+                else if (btn == btnTime5 && selectedTime != 5) 
+                    btn.image.sprite = spriteTimeHover;
+                else if (btn == btnTime10 && selectedTime != 10) 
+                    btn.image.sprite = spriteTimeHover;
             });
             trigger.triggers.Add(enter);
 
@@ -241,6 +275,7 @@ public class GameMenuManager : MonoBehaviour
                 // On remet le visuel à jour (ça remettra le sprite Normal ou Selected)
                 if (btn == btnModeStory || btn == btnModeTimeAttack)
                     UpdateModeVisuals();
+                if (btn == btnTime3 || btn == btnTime5 || btn == btnTime10) UpdateTimeVisuals();
             });
             trigger.triggers.Add(exit);
         }

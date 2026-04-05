@@ -19,6 +19,7 @@ public class EndlessModeManager : MonoBehaviour
     public GhostCycleManagerEndless ghostCycleManagerEndless;
     void Start()
     {
+        modeDurationInMinutes = PlayerPrefs.GetInt("EndlessDuration", 3);
         elapsedTime = 0f;
         modeDurationInSeconds = modeDurationInMinutes * 60;
         degres = 360/modeDurationInSeconds;

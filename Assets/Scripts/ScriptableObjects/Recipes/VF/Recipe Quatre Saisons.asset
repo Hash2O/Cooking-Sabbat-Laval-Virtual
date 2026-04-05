@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: Quatre Saisons
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 1, g: 0, b: 1, a: 1}
+  potionColor: {r: 0.9528302, g: 0.5528213, b: 0.7849252, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: cc73723eb2581ab4aabd19c4f60079ba, type: 2}
   requiredIngredients:
@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 017064dd6d929794da473224ceab5408, type: 2}
   - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
   - {fileID: 11400000, guid: 18e4bdef1bf73fe489acc954a39c1ba5, type: 2}
-  ghostPrefab: {fileID: 7908044644123086282, guid: ecd3b9a69a539d84282677853f15faea, type: 3}
+  ghostPrefab: {fileID: 4978837553210059881, guid: 282ad0e56be032c46bbb63126f22a0d9, type: 3}
   isKnownAtStart: 0

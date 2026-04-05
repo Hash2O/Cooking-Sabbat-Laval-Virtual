@@ -15,6 +15,9 @@ MonoBehaviour:
   recipeName: Recipe0
   description: "Recette sans ingr\xE9dient \xE9quipant le bouteilles vides."
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  requiredIngredients: []
-  potionColor: {r: 1, g: 0.990566, b: 1, a: 0.019607844}
+  potionColor: {r: 0.5764706, g: 0.49019608, b: 0.34117648, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 0}
+  requiredIngredients: []
+  ghostPrefab: {fileID: 0}
+  isKnownAtStart: 0

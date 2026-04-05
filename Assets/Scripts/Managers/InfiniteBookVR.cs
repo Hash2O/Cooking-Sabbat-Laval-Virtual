@@ -33,6 +33,7 @@ public class InfiniteBook : MonoBehaviour
     private string activeStateName; 
 
     private bool isTurningNext; 
+    private bool hasPlayedTurnSound = false;
 
     [Header("Réglages de Direction")]
     public Vector3 pageDirection = new Vector3(-1, 0, 0); 
@@ -40,6 +41,9 @@ public class InfiniteBook : MonoBehaviour
     [Header("Livre Infini")]
     public int totalPages = 12; 
     public int currentPageIndex = 0; 
+    [Header("Interaction")]
+    public Collider pageColliderRight;
+    public Collider pageColliderLeft;
 
     private void Start()
     {
@@ -139,6 +143,7 @@ public class InfiniteBook : MonoBehaviour
 
         bookAnimator.speed = 0;
         ApplyAnimation(currentProgress);
+        hasPlayedTurnSound = false;
     }
 
     public void EndGrab(SelectExitEventArgs args)
@@ -173,6 +178,16 @@ public class InfiniteBook : MonoBehaviour
         
         currentProgress = Mathf.Clamp01(newProgress);
         ApplyAnimation(currentProgress);
+
+        if (!hasPlayedTurnSound && currentProgress > 0.15f && currentProgress < 0.85f)
+        {
+            
+            if (AudioManager.audioInstance != null) 
+            {
+                AudioManager.audioInstance.PlayTheGoodSound(Random.Range(17,20));
+            }
+            hasPlayedTurnSound = true; 
+        }
     }
 
     void ApplyAnimation(float progress)
@@ -185,6 +200,10 @@ public class InfiniteBook : MonoBehaviour
 
     System.Collections.IEnumerator SmoothFinish(float targetValue)
     {
+        if (pageColliderRight != null) 
+            pageColliderRight.enabled = false;
+        if (pageColliderLeft != null) 
+            pageColliderLeft.enabled = false;
         float duration = 0.2f;
         float startValue = currentProgress;
         float time = 0;
@@ -230,6 +249,12 @@ public class InfiniteBook : MonoBehaviour
         // C'est ce qui crée l'illusion d'infini.
         currentProgress = 0f;
         ApplyAnimation(currentProgress);
+
+        if (pageColliderRight != null) 
+            pageColliderRight.enabled = true;
+        if (pageColliderLeft != null) 
+            pageColliderLeft.enabled = true;
+    
     }
 
     // --- Adapter InfiniteBook pour recevoir des pages dynamiques ---
@@ -237,7 +262,7 @@ public class InfiniteBook : MonoBehaviour
     public void BuildPagesFromRecipes(List<RecipeData> recipes)
     {
         pageMaterials.Clear();
-
+        
         foreach (var recipe in recipes)
         {
             if (recipe.pageMaterial != null)

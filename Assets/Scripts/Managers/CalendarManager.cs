@@ -1,28 +1,36 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class CalendarManager : MonoBehaviour
 {
-    [Header("Références")]
-    [SerializeField] private Image sunImage;
-    [SerializeField] private Image moonImage;
-    [SerializeField] private TextMeshProUGUI numberText;
+    [SerializeField] private Renderer calendar;
+
+    [SerializeField] private Material sunMaterial;
+    [SerializeField] private Material moonMaterial;
+
+    [SerializeField] private TMP_Text numberText;
 
     public void SunTime()
     {
-        sunImage.gameObject.SetActive(true);
-        moonImage.gameObject.SetActive(false);
+        if (calendar != null && sunMaterial != null)
+        {
+            calendar.material = sunMaterial;
+        }
     }
 
     public void MoonTime()
     {
-        sunImage.gameObject.SetActive(false);
-        moonImage.gameObject.SetActive(true);
+        if (calendar != null && moonMaterial != null)
+        {
+            calendar.material = moonMaterial;
+        }
     }
 
     public void ChangeDay(int day)
     {
-        numberText.text = day.ToString();
+        if (numberText != null)
+        {
+            numberText.text = day.ToString();
+        }
     }
 }

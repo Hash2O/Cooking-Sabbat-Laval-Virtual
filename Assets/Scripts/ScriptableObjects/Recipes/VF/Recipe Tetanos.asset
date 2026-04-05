@@ -15,12 +15,12 @@ MonoBehaviour:
   recipeName: "T\xE9tanos"
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 0.18823531, g: 0.40000004, b: 0, a: 1}
+  potionColor: {r: 0.069419734, g: 0.3773585, b: 0.069419734, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: 7935fe54a280c52428dc4371e1d8bf5c, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: 6af347f87e6d15148b01b30b8fe6165e, type: 2}
   - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
   - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
-  ghostPrefab: {fileID: 2315974465149695507, guid: 23720ec105a1c0447a4d2cbe8c6e223d, type: 3}
+  ghostPrefab: {fileID: 2315974465149695507, guid: 7c3d686781b491b4294ebe4ab102bd67, type: 3}
   isKnownAtStart: 1

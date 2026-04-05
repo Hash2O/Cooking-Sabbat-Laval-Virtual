@@ -177,7 +177,6 @@ public class InfiniteBookEndless : MonoBehaviour
         if (!hasPlayedTurnSound && currentProgress > 0.15f && currentProgress < 0.85f)
         {
             
-            Debug.Log(AudioManager.audioInstance);
             if (AudioManager.audioInstance != null) 
             {
                 AudioManager.audioInstance.PlayTheGoodSound(Random.Range(17,20));

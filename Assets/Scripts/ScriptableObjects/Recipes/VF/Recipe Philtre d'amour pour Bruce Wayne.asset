@@ -15,12 +15,12 @@ MonoBehaviour:
   recipeName: Philtre d'amour pour Bruce Wayne
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 1, g: 0, b: 1, a: 1}
+  potionColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: 35397d4ef0703ca4d8f8e6d170be48c1, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: cdc602dc3dc320444a5ba5239b004cec, type: 2}
   - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
   - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
-  ghostPrefab: {fileID: 7805313971252525704, guid: 4211cce60a0840e4d8b25d4410254623, type: 3}
+  ghostPrefab: {fileID: 7805313971252525704, guid: cba61a59ee364fb4bb279a4c2da42b34, type: 3}
   isKnownAtStart: 0

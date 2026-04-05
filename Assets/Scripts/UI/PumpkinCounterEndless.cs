@@ -35,8 +35,8 @@ public class PumpkinCounterEndless : MonoBehaviour
 
         UpdatePumpkinVisual();
 
-        if (AudioManager.audioInstance != null)
-            AudioManager.audioInstance.PlayTheGoodSound(5);
+        // if (AudioManager.audioInstance != null)
+        //     AudioManager.audioInstance.PlayTheGoodSound(5);
 
         Debug.Log($"Client satisfait ({satisfiedClients})");
     }
@@ -102,7 +102,7 @@ public class PumpkinCounterEndless : MonoBehaviour
 
                 // Audio 
                 if (AudioManager.audioInstance != null)
-                    AudioManager.audioInstance.PlayTheGoodSound(5); // Success Notification
+                    //AudioManager.audioInstance.PlayTheGoodSound(5); // Success Notification
 
                 Debug.Log($"Citrouille activée ! Total : {satisfiedClients}");
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: Moulin Vert
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 0.23529413, g: 0.35686275, b: 0.023529414, a: 1}
+  potionColor: {r: 0.24528301, g: 0.11785472, b: 0.086774655, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: 30814a878d0c21a4caf4d20fd2ac9629, type: 2}
   requiredIngredients:
@@ -24,5 +24,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a9440f8fadc973e429e8383784a8f13b, type: 2}
   - {fileID: 11400000, guid: 6af347f87e6d15148b01b30b8fe6165e, type: 2}
   - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
-  ghostPrefab: {fileID: 7492574387322186502, guid: a7c99d9058d0cdf4da3194c75de3a500, type: 3}
+  ghostPrefab: {fileID: 7492574387322186502, guid: fd17bed0c61bf4746a7a39e387337199, type: 3}
   isKnownAtStart: 0

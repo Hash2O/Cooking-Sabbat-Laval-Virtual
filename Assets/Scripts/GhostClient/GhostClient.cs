@@ -119,7 +119,7 @@ public class GhostClient : MonoBehaviour
             if (managerEndless != null)
                 managerEndless.ApplyWrongPotionPenalty();
 
-            StartCoroutine(ChangeGhostColor(Color.black));
+            StartCoroutine(ChangeGhostColor(Color.white));
 
             if (AudioManager.audioInstance != null)
                 AudioManager.audioInstance.PlayTheGoodSound(9);
@@ -142,113 +142,121 @@ public class GhostClient : MonoBehaviour
             }
         }
 
-        Renderer rend = ghostRenderer; // MeshRenderer hérite de Renderer
-        Material[] mats = rend.materials; // clones (évite d'altérer sharedMaterial)
+        foreach(Material mat in ghostRenderer.materials)
+                    {
+                        if ( mat.name == "Ghost (Instance)" ) 
+                        {
+                            mat.SetColor("_MainColor",Color.Lerp(ghostRenderer.material.GetColor("_MainColor"), targetColor, 1f));
+                        }
+                    }
 
-        // 2) Liste de noms possibles pour la propriété couleur (essaye plusieurs variantes)
-        string[] candidateColorProps = new[] { "_MainColor", "_BaseColor", "_Color", "MainColor" };
-        string colorProp = null;
+        // Renderer rend = ghostRenderer; // MeshRenderer hérite de Renderer
+        // Material[] mats = rend.materials; // clones (évite d'altérer sharedMaterial)
 
-        // trouver une propriété existante sur le premier matériau
-        Material sample = mats.Length > 0 ? mats[0] : null;
-        if (sample == null)
-        {
-            Debug.LogWarning("GhostClient : pas de matériau sur le renderer.");
-            yield break;
-        }
+        // // 2) Liste de noms possibles pour la propriété couleur (essaye plusieurs variantes)
+        // string[] candidateColorProps = new[] { "_MainColor", "_BaseColor", "_Color", "MainColor" };
+        // string colorProp = null;
 
-        foreach (var p in candidateColorProps)
-        {
-            if (sample.HasProperty(p))
-            {
-                colorProp = p;
-                break;
-            }
-        }
+        // // trouver une propriété existante sur le premier matériau
+        // Material sample = mats.Length > 0 ? mats[0] : null;
+        // if (sample == null)
+        // {
+        //     Debug.LogWarning("GhostClient : pas de matériau sur le renderer.");
+        //     yield break;
+        // }
 
-        // fallback si aucune propriété trouvée : essaye d'utiliser mat.color via "_Color"
-        if (colorProp == null)
-        {
-            if (sample.HasProperty("_Color"))
-                colorProp = "_Color";
-            else
-            {
-                Debug.LogWarning("GhostClient : aucune propriété couleur connue trouvée sur le shader. Tentative d'utilisation de material.color.");
-            }
-        }
+        // foreach (var p in candidateColorProps)
+        // {
+        //     if (sample.HasProperty(p))
+        //     {
+        //         colorProp = p;
+        //         break;
+        //     }
+        // }
 
-        // 3) Vérifier si le shader possède une propriété alpha séparée
-        bool hasAlphaProp = sample.HasProperty("_Alpha") || sample.HasProperty("Alpha");
-        string alphaPropName = sample.HasProperty("_Alpha") ? "_Alpha" : (sample.HasProperty("Alpha") ? "Alpha" : null);
+        // // fallback si aucune propriété trouvée : essaye d'utiliser mat.color via "_Color"
+        // if (colorProp == null)
+        // {
+        //     if (sample.HasProperty("_Color"))
+        //         colorProp = "_Color";
+        //     else
+        //     {
+        //         Debug.LogWarning("GhostClient : aucune propriété couleur connue trouvée sur le shader. Tentative d'utilisation de material.color.");
+        //     }
+        // }
 
-        // 4) Lire les couleurs de départ (par matériau si nécessaire)
-        Color[] startColors = new Color[mats.Length];
-        float[] startAlphas = new float[mats.Length];
+        // // 3) Vérifier si le shader possède une propriété alpha séparée
+        // bool hasAlphaProp = sample.HasProperty("_Alpha") || sample.HasProperty("Alpha");
+        // string alphaPropName = sample.HasProperty("_Alpha") ? "_Alpha" : (sample.HasProperty("Alpha") ? "Alpha" : null);
 
-        for (int i = 0; i < mats.Length; i++)
-        {
-            Material m = mats[i];
+        // // 4) Lire les couleurs de départ (par matériau si nécessaire)
+        // Color[] startColors = new Color[mats.Length];
+        // float[] startAlphas = new float[mats.Length];
 
-            if (!string.IsNullOrEmpty(colorProp) && m.HasProperty(colorProp))
-                startColors[i] = m.GetColor(colorProp);
-            else
-                startColors[i] = m.color; // fallback
+        // for (int i = 0; i < mats.Length; i++)
+        // {
+        //     Material m = mats[i];
 
-            if (hasAlphaProp && m.HasProperty(alphaPropName))
-                startAlphas[i] = m.GetFloat(alphaPropName);
-            else
-                startAlphas[i] = startColors[i].a;
-        }
+        //     if (!string.IsNullOrEmpty(colorProp) && m.HasProperty(colorProp))
+        //         startColors[i] = m.GetColor(colorProp);
+        //     else
+        //         startColors[i] = m.color; // fallback
 
-        // 5) Lerp sur la durée
-        float t = 0f;
-        while (t < 1f)
-        {
-            t += Time.deltaTime * colorChangeSpeed;
-            float clamped = Mathf.Clamp01(t);
+        //     if (hasAlphaProp && m.HasProperty(alphaPropName))
+        //         startAlphas[i] = m.GetFloat(alphaPropName);
+        //     else
+        //         startAlphas[i] = startColors[i].a;
+        // }
 
-            for (int i = 0; i < mats.Length; i++)
-            {
-                Material m = mats[i];
-                Color c = Color.Lerp(startColors[i], targetColor, clamped);
+        // // 5) Lerp sur la durée
+        // float t = 0f;
+        // while (t < 1f)
+        // {
+        //     t += Time.deltaTime * colorChangeSpeed;
+        //     float clamped = Mathf.Clamp01(t);
 
-                if (!string.IsNullOrEmpty(colorProp) && m.HasProperty(colorProp))
-                {
-                    m.SetColor(colorProp, c);
-                }
-                else
-                {
-                    m.color = c; // fallback
-                }
+        //     for (int i = 0; i < mats.Length; i++)
+        //     {
+        //         Material m = mats[i];
+        //         Color c = Color.Lerp(startColors[i], targetColor, clamped);
 
-                // gérer alpha séparément si la propriété existe
-                if (hasAlphaProp && m.HasProperty(alphaPropName))
-                {
-                    float a = Mathf.Lerp(startAlphas[i], targetColor.a, clamped);
-                    m.SetFloat(alphaPropName, a);
-                }
-            }
+        //         if (!string.IsNullOrEmpty(colorProp) && m.HasProperty(colorProp))
+        //         {
+        //             m.SetColor(colorProp, c);
+        //         }
+        //         else
+        //         {
+        //             m.color = c; // fallback
+        //         }
 
-            // appliquer les matériaux modifiés au renderer (optionnel, mais rend explicite)
-            rend.materials = mats;
+        //         // gérer alpha séparément si la propriété existe
+        //         if (hasAlphaProp && m.HasProperty(alphaPropName))
+        //         {
+        //             float a = Mathf.Lerp(startAlphas[i], targetColor.a, clamped);
+        //             m.SetFloat(alphaPropName, a);
+        //         }
+        //     }
 
-            yield return null;
-        }
+        //     // appliquer les matériaux modifiés au renderer (optionnel, mais rend explicite)
+        //     rend.materials = mats;
 
-        // s'assurer des valeurs finales
-        for (int i = 0; i < mats.Length; i++)
-        {
-            Material m = mats[i];
-            if (!string.IsNullOrEmpty(colorProp) && m.HasProperty(colorProp))
-                m.SetColor(colorProp, targetColor);
-            else
-                m.color = targetColor;
+        //     yield return null;
+        // }
 
-            if (hasAlphaProp && m.HasProperty(alphaPropName))
-                m.SetFloat(alphaPropName, targetColor.a);
-        }
+        // // s'assurer des valeurs finales
+        // for (int i = 0; i < mats.Length; i++)
+        // {
+        //     Material m = mats[i];
+        //     if (!string.IsNullOrEmpty(colorProp) && m.HasProperty(colorProp))
+        //         m.SetColor(colorProp, targetColor);
+        //     else
+        //         m.color = targetColor;
 
-        rend.materials = mats;
+        //     if (hasAlphaProp && m.HasProperty(alphaPropName))
+        //         m.SetFloat(alphaPropName, targetColor.a);
+        // }
+
+        // rend.materials = mats;
     }
 
     public void TriggerReceivePotion(float time, PotionBottle bottle)

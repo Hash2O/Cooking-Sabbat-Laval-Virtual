@@ -15,12 +15,12 @@ MonoBehaviour:
   recipeName: Scooby Gang
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 1, g: 0, b: 1, a: 1}
+  potionColor: {r: 0.4694094, g: 0, b: 0.6313726, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: d7a0ca75468b8cd489d73e61b7bcb37c, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: 7eec49634d5f26d49ab44b9b9ebd1a49, type: 2}
   - {fileID: 11400000, guid: 6af347f87e6d15148b01b30b8fe6165e, type: 2}
   - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
-  ghostPrefab: {fileID: 7492574387322186502, guid: 1031d535c6bbe3249bebe2dfc7545107, type: 3}
+  ghostPrefab: {fileID: 7492574387322186502, guid: 579d7f0035d796348a01f615ef5f6f85, type: 3}
   isKnownAtStart: 0

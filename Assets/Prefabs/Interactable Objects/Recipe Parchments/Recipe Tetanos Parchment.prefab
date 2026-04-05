@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e869bf7d2500be440908da2e7cb1a78d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0f05580a110f3624fb98fcfe979d5d89, type: 2}
+      objectReference: {fileID: 2100000, guid: d1c7a31583062684e873de1f95adf796, type: 2}
     - target: {fileID: 919132149155446097, guid: e869bf7d2500be440908da2e7cb1a78d, type: 3}
       propertyPath: m_Name
       value: Recipe Tetanos Parchment
@@ -269,3 +269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipePickup
   recipe: {fileID: 11400000, guid: 7ca8ddb089baf60429a4630ed5d2434d, type: 2}
+  parchmentRenderer: {fileID: 8490758092646278674}
+  dissolveDuration: 1.5
+--- !u!23 &8490758092646278674 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: e869bf7d2500be440908da2e7cb1a78d, type: 3}
+  m_PrefabInstance: {fileID: 7067465983813155478}
+  m_PrefabAsset: {fileID: 0}

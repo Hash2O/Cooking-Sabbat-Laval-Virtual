@@ -20,7 +20,7 @@ public class DoorStatusManagement : MonoBehaviour
 
     public void UnlockDoorVisual()
     {
-        // animation / collider / poignée
+        // animation / collider / poignï¿½e
         Debug.Log("Porte ouverte !");
     }
 }

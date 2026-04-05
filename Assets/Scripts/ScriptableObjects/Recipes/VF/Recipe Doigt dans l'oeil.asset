@@ -15,12 +15,12 @@ MonoBehaviour:
   recipeName: Doigt Dans l'Oeil
   description: 
   icon: {fileID: 0}
-  potionColor: {r: 0.15294118, g: 0.56078434, b: 0.454902, a: 1}
+  potionColor: {r: 0.25244746, g: 0.8417945, b: 0.8773585, a: 1}
   bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
   pageMaterial: {fileID: 2100000, guid: ee72937214a5b06429ee168a8da66892, type: 2}
   requiredIngredients:
   - {fileID: 11400000, guid: c7c0319b5add87649a57de37da8b4eda, type: 2}
   - {fileID: 11400000, guid: 593b19ad7eb9bdf41909df68525d379e, type: 2}
   - {fileID: 11400000, guid: 475fd53722be2ee459e46a1ae9c4aedc, type: 2}
-  ghostPrefab: {fileID: 7805313971252525704, guid: 99473b1cdc31b834799ac2c4a5d36138, type: 3}
+  ghostPrefab: {fileID: 7805313971252525704, guid: c5a7675466691af42a9b73d0d8c42ea7, type: 3}
   isKnownAtStart: 0

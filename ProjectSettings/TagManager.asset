@@ -3,7 +3,35 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - EmptyBottle
+  - Cauldron
+  - Furnitures
+  - Delivery
+  - SimiliNavMesh
+  - RightHand
+  - Ghost
+  - Ingredient
+  - Ichor
+  - Poison
+  - Coin
+  - Vermin
+  - ResetCauldron
+  - Key
+  - Anchor
+  - AudioSlider
+  - LeftHand
+  - Sun
+  - LibraryKey
+  - GardenKey
+  - CemeteryKey
+  - Recipe
+  - Ink
+  - QuestItem
+  - Spoon
+  - Rat
+  - RoomKey
+  - AtticKey
   layers:
   - Default
   - TransparentFX

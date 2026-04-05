@@ -32,11 +32,19 @@ public class ScoreManagerEndless : MonoBehaviour
 
     [Header("Livre de Bilan & Bouton 3D")]
     public Animator bookAnimator; 
-    public GameObject waxSealButton; // Le sceau 3D à activer à la fin
+    public GameObject waxSealButton; 
+    public GameObject bookGameObject;
+
+    [Header("Effets d'Apparition (Glow)")]
+    [Tooltip("La lumière qui va flasher à l'apparition du livre")]
+    public Light glowLight;
+    [Tooltip("L'intensité maximale du flash")]
+    public float maxGlowIntensity = 5f;
+    [Tooltip("L'index de ton nouveau son dans l'AudioManager")]
+    public int glowSoundIndex = 20;
     
     [Tooltip("Optionnel : Si tes textes sont dans un Canvas, met le CanvasGroup ici pour un fondu")]
     public CanvasGroup textCanvasGroup; 
-    public GameObject bookGameObject;
     public GameObject recipeBookGameObject;
 
     private void Awake()
@@ -85,14 +93,32 @@ public class ScoreManagerEndless : MonoBehaviour
         recipeBookGameObject.SetActive(false);
         if (bookGameObject != null)
         {
-            bookGameObject.SetActive(true); // On allume l'objet 3D
+            bookGameObject.SetActive(true); 
             
-            // Optionnel : Un petit effet magique avec DOTween pour qu'il n'apparaisse pas d'un coup sec
+            // L'effet d'apparition du livre
             bookGameObject.transform.localScale = Vector3.zero;
-            bookGameObject.transform.DOScale(new Vector3(0.4f, 0.4f, 0.4f), 0.6f).SetEase(Ease.OutBack);
+            bookGameObject.transform.DOScale(new Vector3(0.4f,0.4f,0.4f), 0.6f).SetEase(Ease.OutBack);
             
+            // --- NOUVEAU : Le Glow et le Son ---
             if (AudioManager.audioInstance != null)
-                AudioManager.audioInstance.PlayTheGoodSound(Random.Range(17,20)); // Son d'apparition
+            {
+                // On joue ton nouveau son d'apparition magique
+                AudioManager.audioInstance.PlayTheGoodSound(20); 
+            }
+
+            if (glowLight != null)
+            {
+                glowLight.gameObject.SetActive(true);
+                glowLight.intensity = 0f; // On part de zéro
+                
+                // On monte l'intensité très vite (le flash qui alerte le joueur)
+                glowLight.DOIntensity(maxGlowIntensity, 1.5f).OnComplete(() => 
+                {
+                    // Puis on redescend doucement vers une lumière d'ambiance plus douce (ex: la moitié de l'intensité)
+                    glowLight.DOIntensity(maxGlowIntensity / 3f, 1.5f);
+                });
+            }
+            // -----------------------------------
         }
         // 1. Mettre à jour les textes avec les valeurs finales
         if (textTotalPotions != null) 

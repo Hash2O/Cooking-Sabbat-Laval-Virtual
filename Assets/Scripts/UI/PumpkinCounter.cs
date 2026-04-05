@@ -102,6 +102,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class PumpkinCounter : MonoBehaviour
 {
@@ -156,8 +157,8 @@ public class PumpkinCounter : MonoBehaviour
 
         UpdatePumpkinVisual();
 
-        if (AudioManager.audioInstance != null)
-            AudioManager.audioInstance.PlayTheGoodSound(5);
+        // if (AudioManager.audioInstance != null)
+        //     AudioManager.audioInstance.PlayTheGoodSound(5);
 
         Debug.Log($"Client satisfait ({satisfiedClients}/{clientsToSatisfyThisNight})");
 
@@ -202,7 +203,14 @@ public class PumpkinCounter : MonoBehaviour
         {
             if (pumpkins[i] == null) continue;
 
-            pumpkins[i].SetActive(i < satisfiedClients);
+            if(!pumpkins[i].activeInHierarchy)
+            {            
+                Vector3 scale = pumpkins[i].transform.localScale;
+                pumpkins[i].transform.localScale = Vector3.zero;
+                pumpkins[i].SetActive(i < satisfiedClients);
+                pumpkins[i].transform.DOScale(scale, 1.5f); 
+                AudioManager.audioInstance.PlayTheGoodSound(15); 
+            }
         }
     }
 
@@ -231,7 +239,7 @@ public class PumpkinCounter : MonoBehaviour
 
                 // Audio 
                 if (AudioManager.audioInstance != null)
-                    AudioManager.audioInstance.PlayTheGoodSound(5); // Success Notification
+                    //AudioManager.audioInstance.PlayTheGoodSound(5); // Success Notification
 
                 Debug.Log($"Citrouille activée ! Total : {satisfiedClients}");
 

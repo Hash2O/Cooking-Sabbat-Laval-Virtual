@@ -5,22 +5,22 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class CoinTriggerDoor : MonoBehaviour
 {
-    [Header("Réglages")]
-    public string coinTag = "Coin";     // Tag des objets à détecter
-    public int requiredCoins = 3;       // Nombre d'objets nécessaires
+    [Header("Rï¿½glages")]
+    public string coinTag = "Coin";     // Tag des objets ï¿½ dï¿½tecter
+    public int requiredCoins = 3;       // Nombre d'objets nï¿½cessaires
 
-    [Header("Référence porte")]
+    [Header("Rï¿½fï¿½rence porte")]
     public Animator doorAnimator;       // Animator de la porte (optionnel)
     public string openTriggerName = "Open"; // Nom du trigger dans l'Animator
     public AudioSource doorAudioSource;
     public string doorID = "LibraryDoor";
 
-    [Header("Référence compteur tirelire")]
+    [Header("Rï¿½fï¿½rence compteur tirelire")]
     public TextMeshProUGUI compteurTirelire;
 
-    [Header("Clé dans la serrure")]
-    public XRSocketInteractor keySocket;    // La socket où la clé doit être placée
-    public string requiredKeyTag = "LibraryKey";   // Tag de l’objet-clé
+    [Header("Clï¿½ dans la serrure")]
+    public XRSocketInteractor keySocket;    // La socket oï¿½ la clï¿½ doit ï¿½tre placï¿½e
+    public string requiredKeyTag = "LibraryKey";   // Tag de lï¿½objet-clï¿½
 
     [HideInInspector]
     public bool keyInserted = false;
@@ -44,7 +44,7 @@ public class CoinTriggerDoor : MonoBehaviour
         currentCoinsInTrigger++;
         Destroy(other.gameObject, 0.5f);
 
-        Debug.Log("Pièces dans la tirelire : " + currentCoinsInTrigger);
+        Debug.Log("Piï¿½ces dans la tirelire : " + currentCoinsInTrigger);
         compteurTirelire.text = currentCoinsInTrigger.ToString();
 
         CheckCondition();
@@ -69,7 +69,7 @@ public class CoinTriggerDoor : MonoBehaviour
         if (args.interactableObject.transform.CompareTag(requiredKeyTag))
         {
             keyInserted = true;
-            Debug.Log("Clé insérée dans la serrure !");
+            Debug.Log("Clï¿½ insï¿½rï¿½e dans la serrure !");
             CheckCondition();
         }
     }
@@ -79,7 +79,7 @@ public class CoinTriggerDoor : MonoBehaviour
         if (args.interactableObject.transform.CompareTag(requiredKeyTag))
         {
             keyInserted = false;
-            Debug.Log("Clé retirée de la serrure.");
+            Debug.Log("Clï¿½ retirï¿½e de la serrure.");
         }
     }
 
@@ -90,14 +90,13 @@ public class CoinTriggerDoor : MonoBehaviour
         if (currentCoinsInTrigger >= requiredCoins && keyInserted)
         {
             doorOpened = true;
-
             ExplorationProgressManager.ExplorationInstance.UnlockDoor(doorID);
 
             Debug.Log("Conditions remplies : ouverture de la porte !");
 
             if (doorAnimator != null && !string.IsNullOrEmpty(openTriggerName))
             {
-                doorAnimator.SetTrigger(openTriggerName);
+                doorAnimator.SetTrigger(openTriggerName);            
 
                 if (AudioManager.audioInstance != null)
                     AudioManager.audioInstance.PlayTheGoodSound(6);

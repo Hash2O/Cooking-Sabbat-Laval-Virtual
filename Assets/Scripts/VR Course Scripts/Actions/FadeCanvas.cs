@@ -20,6 +20,8 @@ public class FadeCanvas : MonoBehaviour
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        if(!this.gameObject.activeInHierarchy)
+            this.gameObject.SetActive(true);
     }
 
     public void StartFadeIn()

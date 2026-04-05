@@ -40,16 +40,19 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGhostSound(int index)
     {
-        audioSource.PlayOneShot(_ghostAudioClips[index]);
+        if(index <= _ghostAudioClips.Count - 1)
+            audioSource.PlayOneShot(_ghostAudioClips[index]);
     }
 
     public void PlayNotificationSound(int index)
     {
-        audioSource.PlayOneShot(_notificationAudioClips[index]);
+        if(index <= _notificationAudioClips.Count - 1)
+            audioSource.PlayOneShot(_notificationAudioClips[index]);
     }
 
     public void PlayItemSound(int index)
     {
-        audioSource.PlayOneShot(_itemSoundAudioClips[index]);
+        if(index <= _itemSoundAudioClips.Count - 1)
+            audioSource.PlayOneShot(_itemSoundAudioClips[index]);
     }
 }

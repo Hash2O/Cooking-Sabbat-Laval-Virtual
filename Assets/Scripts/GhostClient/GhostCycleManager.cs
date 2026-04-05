@@ -843,7 +843,18 @@ public class GhostCycleManager : MonoBehaviour
             {
                 if (activeGhost.patienceBar != null)
                     activeGhost.patienceBar.SetVisible(false);
-
+                if (activeGhost.ghostRenderer != null)
+                {
+                    foreach(Material mat in activeGhost.ghostRenderer.materials)
+                    {
+                        mat.SetFloat("_Alpha", Mathf.Lerp(activeGhost.ghostRenderer.material.GetFloat("_Alpha"), 1.0f, 0.75f));
+                        if ( mat.name == "Ghost (Instance)" ) 
+                        {
+                            mat.SetColor("_MainColor",Color.Lerp(activeGhost.ghostRenderer.material.GetColor("_MainColor"), activeGhost.requestedRecipe.potionColor, 1.5f));
+                        }
+                    }
+                        
+                }
                 yield break;
             }
 
@@ -856,6 +867,14 @@ public class GhostCycleManager : MonoBehaviour
             {
                 float remainingPercent = remainingWaitTime / maxWaitTime;
                 activeGhost.patienceBar.SetFill(remainingPercent);
+            }
+            if (activeGhost.ghostRenderer != null)
+            {
+                float remainingPercent = remainingWaitTime / maxWaitTime;
+                foreach(Material mat in activeGhost.ghostRenderer.materials)
+                {
+                    mat.SetFloat("_Alpha", remainingPercent);
+                }
             }
 
             yield return null;

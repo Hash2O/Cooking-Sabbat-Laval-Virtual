@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb73555c1f09041b67e613296df52e, type: 3}
+  m_Name: Recipe Memo1
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: "T\xE9tanos"
+  description: 
+  icon: {fileID: 0}
+  potionColor: {r: 0.024563907, g: 0.2264151, b: 0.024563907, a: 1}
+  bottlePrefab: {fileID: 3660984119618516505, guid: 60bca27091de3b944a0d7c9c80ff9206, type: 3}
+  pageMaterial: {fileID: 2100000, guid: 77d0c126ca203584fb408ba2f9dac04a, type: 2}
+  requiredIngredients: []
+  ghostPrefab: {fileID: 0}
+  isKnownAtStart: 1
