@@ -19,6 +19,7 @@ public class ItemHint : MonoBehaviour
 
     private Coroutine holdCoroutine;
     private Rigidbody rb;
+    private bool isPlaced = false;
 
     private void Awake()
     {
@@ -45,6 +46,7 @@ public class ItemHint : MonoBehaviour
 
     public void StartGrabHint()
     {
+        if (isPlaced) return;
         if (rb != null) rb.isKinematic = false;
         transform.SetParent(null);
         
@@ -87,6 +89,7 @@ public class ItemHint : MonoBehaviour
 
     public void OnSuccessfullyPlaced()
     {
+        isPlaced = true;
         StopGrabHint();
         if (destinationFX != null) 
         {

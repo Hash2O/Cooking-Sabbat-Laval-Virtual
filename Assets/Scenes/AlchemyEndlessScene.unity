@@ -31064,6 +31064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Cooking Spoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6282936410847895621, guid: be31a6276da4a6d439db119a72d58ebb, type: 3}
+      propertyPath: m_TagString
+      value: Spoon
+      objectReference: {fileID: 0}
     - target: {fileID: 7103368438796567959, guid: be31a6276da4a6d439db119a72d58ebb, type: 3}
       propertyPath: m_Enabled
       value: 0

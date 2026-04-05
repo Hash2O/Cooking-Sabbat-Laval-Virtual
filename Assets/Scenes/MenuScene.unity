@@ -29285,7 +29285,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.8252474, b: 0.495283, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -56879,7 +56879,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 31c23badd704bca42b61e54f027de747, type: 3}
   - {fileID: 8300000, guid: ef1f5011c9e288045ac1b86456e5d045, type: 3}
   - {fileID: 8300000, guid: 3aa2d1db42490d24eaddfe1870716dd3, type: 3}
-  - {fileID: 8300000, guid: 5248dc518b499bf429ada55ce0026083, type: 3}
+  - {fileID: 8300000, guid: 2dfa315aedd475e44bc0b0b1b141c19d, type: 3}
   _itemSoundAudioClips:
   - {fileID: 8300000, guid: c77ea88111146f44888eed25562b33d7, type: 3}
 --- !u!4 &1892720493
@@ -57342,6 +57342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 8980609855446472787, guid: 5483eb8c1df2ab24a87f1b3aa3e95e95, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: a07b0e82dd2dbb04ba72668b547ca744, type: 2}
     m_RemovedComponents:
     - {fileID: 4287356975960346829, guid: 5483eb8c1df2ab24a87f1b3aa3e95e95, type: 3}
     m_RemovedGameObjects: []
@@ -59825,7 +59829,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.8252474, b: 0.495283, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

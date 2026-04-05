@@ -101,6 +101,15 @@ public class RoomHintManager : MonoBehaviour
         targetToShake.DOShakePosition(2f, positionShake, 10, 90, false, false)
             .SetLoops(-1, LoopType.Restart)
             .SetEase(Ease.Linear);
+            if (targetToShake != item.transform) 
+        {
+            // On le glisse dans l'arrosoir
+            item.transform.SetParent(targetToShake); 
+            
+            // On désactive sa physique pour qu'il ne rebondisse plus
+            Rigidbody rb = item.GetComponent<Rigidbody>();
+            if (rb != null) rb.isKinematic = true; 
+        }
     }
 
     public void OnItemFound(GameObject foundItem)
@@ -135,6 +144,13 @@ public class RoomHintManager : MonoBehaviour
             currentlyShakingTransform.localPosition = savedLocalPosition;
             currentlyShakingTransform.localRotation = savedLocalRotation;
             
+            if (currentHintedItem != null && currentlyShakingTransform != currentHintedItem.transform)
+            {
+                currentHintedItem.transform.SetParent(null); // Il redevient indépendant
+                
+                Rigidbody rb = currentHintedItem.GetComponent<Rigidbody>();
+                if (rb != null) rb.isKinematic = false; // La gravité revient !
+            }
             // 3. On vide la mémoire
             currentlyShakingTransform = null;
         }
