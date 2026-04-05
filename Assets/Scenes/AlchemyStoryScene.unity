@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 18e54f4ff90c3f84085826ba85923c7b, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: ae9c0b116824ac048bcd8aaf8e54c549, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 34497c11e7e7c4744bcf8202391c382f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8477,6 +8477,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1562929272}
     m_Modifications:
+    - target: {fileID: 3390949826827945921, guid: 68566e06d9f3b9a439ca732d2d597915, type: 3}
+      propertyPath: m_Limits.min
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 4216404509442336258, guid: 68566e06d9f3b9a439ca732d2d597915, type: 3}
       propertyPath: roomManager
       value: 
@@ -8485,6 +8489,10 @@ PrefabInstance:
       propertyPath: destinationFX
       value: 
       objectReference: {fileID: 254840462}
+    - target: {fileID: 4307643076107052870, guid: 68566e06d9f3b9a439ca732d2d597915, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7229471699230731251, guid: 68566e06d9f3b9a439ca732d2d597915, type: 3}
       propertyPath: m_Name
       value: Chest
@@ -35765,8 +35773,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.84545845, y: 1.6764268, z: 1}
-  m_Center: {x: 0.07727081, y: 0.8388651, z: 0.0000000019506148}
+  m_Size: {x: 1.1467154, y: 1.6764268, z: 1.0333787}
+  m_Center: {x: -0.028274564, y: 0.8388651, z: -0.14602381}
 --- !u!1001 &1266920503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44094,7 +44102,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -55746,7 +55754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa04442b36b43564d959f25ba590a538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomHintManager
-  timeBeforeHint: 45
+  timeBeforeHint: 30
   hiddenItems:
   - {fileID: 1421394697}
   - {fileID: 2234182575021613376}
@@ -59223,7 +59231,7 @@ MonoBehaviour:
   overrideShakeObject: {fileID: 0}
   rattleSource: {fileID: 1933983345}
   whisperSource: {fileID: 216396583}
-  timeBeforeDestinationHint: 20
+  timeBeforeDestinationHint: 5
 --- !u!4 &2395662153104593016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 564765050886951061, guid: 20e24dcefb0a2d545b89f469c26d7d57, type: 3}
@@ -60120,15 +60128,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7491359024259551913, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
       propertyPath: m_Size.x
-      value: 0.4711045
+      value: 0.47110453
       objectReference: {fileID: 0}
     - target: {fileID: 7491359024259551913, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
       propertyPath: m_Size.y
       value: 0.16762252
       objectReference: {fileID: 0}
     - target: {fileID: 7491359024259551913, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
+      propertyPath: m_Size.z
+      value: 0.35395706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491359024259551913, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
       propertyPath: m_Center.x
-      value: -0.0043116915
+      value: -0.0043116994
       objectReference: {fileID: 0}
     - target: {fileID: 7491359024259551913, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
       propertyPath: m_Center.y
@@ -60136,7 +60148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7491359024259551913, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
       propertyPath: m_Center.z
-      value: -0.014118813
+      value: -0.0032279328
       objectReference: {fileID: 0}
     - target: {fileID: 7496493060051910723, guid: 18d1785086c6ae945adfe14f9cc66057, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
